@@ -1,0 +1,404 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-sep-2015, 14:51:00
+    Author     : Laura Schiatti
+*/
+
+@media (max-width:575px) {
+    h1{
+        padding-top: 15%;
+        font-size: 3em;  
+    } 
+    
+    h2{
+        text-align: center;
+        font-size: 1.6em; 
+    }
+    
+    /* ---- Boton de comenzar ------ */
+    /* Tomado de http://bootsnipp.com/snippets/featured/circle-button-with-3d-shadow-and-hover-effect*/
+    .orange-circle-button {
+        box-shadow: 1px 2px 0 1px rgba(0,0,0,0.1);
+        border: .5em solid #E84D0E;
+        //font-size: 1em;
+        line-height: 1.1em;
+        color: #ffffff;
+        background-color: #e84d0e;
+        margin: 10px 0 0 35%;
+        border-radius: 50%;
+        height: 5em;
+        width: 5em;
+        //position: relative;
+    }
+    
+    .glyphicon-play{
+        font-size: 2.3em;
+        margin-top: 10%;
+        text-align: center;
+        margin-left: 0;
+    }
+    /* ---- Boton de comenzar ------ */
+    
+    #sopa{
+        width: 95%;
+        margin: 10px 2% 9px 2%;
+    }   
+    
+    #iniciarsesionlabel, #registrarlabel{
+        font-size: 1.2em;        
+    }
+    
+    label{
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 576px) and (max-width : 767px){    
+    h1{
+        font-size: 3.7em;    
+        
+    }
+    
+    h2{
+        text-align: right;
+        padding-right: 12%;
+        font-size: 1.8em; 
+    }
+    
+    /* ---- Boton de comenzar ------ */
+    /* Tomado de http://bootsnipp.com/snippets/featured/circle-button-with-3d-shadow-and-hover-effect*/
+    .orange-circle-button {
+        box-shadow: 1px 2px 0 1px rgba(0,0,0,0.1);
+        border: .5em solid #E84D0E;
+        //font-size: 1em;
+        line-height: 1.1em;
+        color: #ffffff;
+        background-color: #e84d0e;
+        margin: 0 0 0 40%;
+        border-radius: 50%;
+        height: 7em;
+        width: 7em;
+        //position: relative;
+    }
+    
+    .glyphicon-play{
+        font-size: 3.5em;
+        margin-top: 16%;
+        text-align: center;
+        margin-left: 10%;
+    }
+    /* ---- Boton de comenzar ------ */
+    
+    #sopa{
+        width: 70%;
+        margin: 5px 15% 5px 15%;
+    } 
+    
+    #iniciarsesionlabel, #registrarlabel{
+        font-size: 1.3em;        
+    }
+    
+    label{
+        font-size: 0.9em;
+    }
+    
+    .modal-dialog{
+        width: 70%;        
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+@media (min-width :768px) and (max-width : 991px){    
+    h1{
+        padding-top: 25px;
+        font-size: 4.6em;  
+    } 
+    
+    h2{
+        text-align: right;
+        padding-right: 10%;
+        font-size: 2.2em; 
+    }
+    
+    /* ---- Boton de comenzar ------ */
+    /* Tomado de http://bootsnipp.com/snippets/featured/circle-button-with-3d-shadow-and-hover-effect*/
+    .orange-circle-button {
+        box-shadow: 3px 5px 1px 3px rgba(0,0,0,0.1);
+        border: .5em solid #E84D0E;
+        //font-size: 1em;
+        line-height: 1.1em;
+        color: #ffffff;
+        background-color: #e84d0e;
+        margin: 20px 0 0 20px;
+        border-radius: 50%;
+        height: 9em;
+        width: 9em;
+        //position: relative;
+    }
+    
+    .glyphicon-play{
+        font-size: 4.2em;
+        margin-top: 22%;
+        text-align: center;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+    /* ---- Boton de comenzar ------ */
+    
+    #sopa{
+        width: 90%;
+        margin: 10px 0 0 10px;
+    } 
+    
+    #iniciarsesionlabel, #registrarlabel{
+        font-size: 1.4em;        
+    }
+    
+    label{
+        font-size: 1.1em;
+    }
+    
+    .modal-dialog{
+        width: 50%;        
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body{
+        padding: 5%;
+    }
+    
+    h1{
+        margin-top: 30px;
+        font-size: 4.2em; 
+    } 
+    
+    h2{
+        text-align: right;
+        padding-right: 8%;
+        font-size: 2.4em; 
+    }
+    
+    /* ---- Boton de comenzar ------ */
+    /* Tomado de http://bootsnipp.com/snippets/featured/circle-button-with-3d-shadow-and-hover-effect*/
+    .orange-circle-button {
+        box-shadow: 3px 5px 1px 3px rgba(0,0,0,0.1);
+        border: .5em solid #E84D0E;
+        //font-size: 1em;
+        line-height: 1.1em;
+        color: #ffffff;
+        background-color: #e84d0e;
+        margin: 50px 0 0 70px;
+        border-radius: 50%;
+        height: 11em;
+        width: 11em;
+        //position: relative;
+    }
+    
+    .glyphicon-play{
+        font-size: 4.9em;
+        margin-top: 25%;
+        text-align: center;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+    /* ---- Boton de comenzar ------ */
+    
+    #sopa{
+        width: 90%;
+        margin: 30px 5% 0 5%;
+    }
+    
+    #iniciarsesionlabel, #registrarlabel{
+        font-size: 1.6em;        
+    }
+    
+    label{
+        font-size: 1.1em;
+    }
+    
+    .modal-dialog{
+        width: 50%;        
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+
+@media (min-width : 1200px){    
+    h1{
+        font-size: 5.2em;   
+    } 
+    
+    h2{
+        text-align: right;
+        padding-right: 12%;
+        font-size: 3.2em; 
+    }
+    
+    /* ---- Boton de comenzar ------ */
+    /* Tomado de http://bootsnipp.com/snippets/featured/circle-button-with-3d-shadow-and-hover-effect*/
+    .orange-circle-button {
+        box-shadow: 7px 8px 5px 5px rgba(0,0,0,0.1);
+        border: .9em solid #E84D0E;
+        //font-size: 1em;
+        line-height: 4.1em;
+        color: #ffffff;
+        background-color: #e84d0e;
+        margin: 40px 0 0 50px;
+        border-radius: 50%;
+        height: 11em;   
+        width: 11em;
+        //position: relative;
+    }
+    
+    .glyphicon-play{
+        font-size: 5em;
+        margin-top: 18%;
+        text-align: center;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+    /* ---- Boton de comenzar ------ */
+    
+    #sopa{
+        width: 82%;
+        margin: 10px 9% 10px 9%;
+        border: 10px solid #660066;
+        padding: 15px;
+    }   
+    
+    #iniciarsesionlabel, #registrarlabel{
+        font-size: 1.8em;        
+    }
+    
+    label{
+        font-size: 1.3em;
+    }
+    
+    .modal-dialog{
+        width: 40%;        
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}
+
+body{
+    padding-top: 2%;
+    //background-color: #FFB139;
+    background: url("../images/img02.jpg");
+}
+
+h1{
+    color: #232BE8;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2{   
+    color: black;
+}
+
+.container{
+    width: 82%;
+    margin-left: 9%;
+    margin-right: 9%;
+}
+
+/* ---- Boton de comenzar ------ */
+/* Tomado de http://bootsnipp.com/snippets/featured/circle-button-with-3d-shadow-and-hover-effect*/
+.orange-circle-button:hover {
+    color:#ffffff;
+    background-color: #e84d0e;
+    text-decoration: none;
+    border-color: #ff7536;
+	
+}
+.orange-circle-button:visited {
+    color:#ffffff;
+    background-color: #e84d0e;
+    text-decoration: none;
+	
+}
+/* ---- Boton de comenzar ------ */
+
+#iniciarsesionlabel, #registrarlabel{
+    text-align: center;
+}
+
+//Tomado de http://jsfiddle.net/Kx2k5/
+.item {    
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.item:hover{
+    text-decoration: none;
+}
+
+.i2 { 
+    width: 150px;
+    height: 150px;
+    position: absolute; 
+    top: 10px; 
+    left: 35px;  
+    border-radius: 50%;
+    //border: 1px solid red;   
+    background: #cc66ff;
+    padding: 58px 25px 25px 22px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.i2:hover{
+    color: blue;
+}
+
+.i3 { 
+    width: 150px;
+    height: 150px;
+    position: absolute; 
+    top: 100px; 
+    left: 75px;  
+    border-radius: 50%;
+    //border: 1px solid blue;   
+    background: #660066;
+    padding: 62px 35px 35px 32px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.i3:hover{
+    color: lightpink;
+}
+
+
+#iniciar, #crear, #registrarlabel,#iniciarsesionlabel {
+    color: black;
+    font-weight: bold;
+}
+
+.contenedor {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#crear {
+    width:20%;
+    margin-left: 40%;
+    margin-right: 40%;    
+}
+
+h2 {
+    font-weight: bold;
+}

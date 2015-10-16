@@ -1,0 +1,42 @@
+﻿extends layout
+
+block content
+    .container
+        h2 Registro
+    br
+    br
+
+    //if flash.error
+        .alert.alert-danger(style='width: 40%; margin-left:30%; margin-right:30%')
+          a.close(href='#', data-dismiss='alert', aria-label='close') ×
+          |  flash.error
+
+    form.contenedor(id='registrar-form', method='POST', action='/usuarios/registrar')
+      .form-group
+        label#namelabel(for='name') Nombre
+        .input-group
+          span.input-group-addon
+            span.glyphicon.glyphicon-user
+          input#name.form-control(type='text', name='name', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='')
+      .form-group
+        label#nicknamelabel(for='nickname') Nombre de usuario
+        .input-group
+          span.input-group-addon
+            span.glyphicon.glyphicon-user
+          input#nickname.form-control(type='text', name='nickname', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='')
+      .form-group
+        label#emailabel(for='email') Correo electrónico
+        .input-group
+          span.input-group-addon
+            span.glyphicon.glyphicon-envelope
+          input#correo.form-control(type='email', name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Email', required='')
+      .form-group
+        label#passlabel(for='password') Contraseña
+        .input-group
+          span.input-group-addon
+            span.glyphicon.glyphicon-lock
+          input#password.form-control(type='password', name='password', title='Contraseña', required='')
+      
+      br
+  
+      input#crear.btn.btn-info(type='submit', value='Ok')

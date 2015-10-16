@@ -1,0 +1,63 @@
+﻿doctype html
+html
+  head    
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Sopa de Letras
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')
+  body
+    #container1
+      h1 CREA TU SOPA
+      br
+      br
+      #container
+        .row
+          .col-sm-9.col-md-9
+            form(name='miFormulario')
+              label#titulolabel TÍTULO
+              input#titulo(type='text', name='titulo', required='')
+              br
+              br
+              br
+              label#descripcionlabel DESCRIPCIÓN
+              input#descripcion(type='text', name='descripcion', required='')
+              br
+              br
+              br
+              br
+              label#numerolabel NÚMERO DE PALABRAS
+              input#numero(type='number', name='numero', min='1', max='15', value='1', required='', onkeyup="if(this.value>15){this.value='15';}else if(this.value<1){this.value='1';}")
+              input#check(type='button', onclick='validar();mostrar();', value='Insertar')
+          .col-sm-3.col-md-3
+            img#sopa2(src='images/sopa2.png', alt='prueba')
+          br
+          .row
+            #mostrar.col-sm-12.col-md-12  
+          .row
+            #generar.col-sm-12.col-md-12  
+    #container2(style='display:none')
+      .row
+        #sopaT.col-md-12.col-sm-12
+      .row
+        .col-md-2.col-sm-2
+        h2#sopaD.col-md-8.col-sm-8
+        .col-md-2.col-sm-2
+      .row
+        .col-md-1.col-sm-1
+        // <div class="col-md-2 col-sm-2" id="lista2"></div>
+        #table.col-md-7.col-sm-7
+        .col-md-1.col-sm-1
+        #lista.col-md-2.col-sm-2
+        .col-md-1.col-sm-1
+      br
+      .row
+        .col-md-5
+        .col-md-2
+          button#verificar(onclick='verifica()')
+            span.glyphicon.glyphicon-check
+        .col-md-5
+
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/palabras.js')
