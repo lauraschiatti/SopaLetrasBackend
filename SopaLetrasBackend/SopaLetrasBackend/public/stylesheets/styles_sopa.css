@@ -77,9 +77,10 @@ and open the template in the editor.
         margin: 5% 15% 0 15%;
     }
     
-    #generar{    
+    #generar input{    
         width: 20%;
-        margin-left: 40%;        
+        margin-left: 40%;       
+        margin-right: 40%;   
         font-size:1.2em;
         color:#660066;
     } 
@@ -176,9 +177,10 @@ and open the template in the editor.
         margin: 5% 0 0 32%;
     }
     
-    #generar{    
+    #generar input{    
         width: 20%;
-        margin-left: 40%;        
+        margin-left: 40%;  
+        margin-right: 40%;      
         font-size:1.2em;
         color:#660066;
     } 
@@ -283,9 +285,9 @@ and open the template in the editor.
         margin: 5% 0 0 37%;
     }
     
-    #generar{    
-        width: 20%;
-        margin-left: 43%;        
+    #generar input{    
+        width: 10%;
+        margin-left: 43%;       
         font-size:1.2em;
         color:#660066;
     } 
@@ -293,7 +295,6 @@ and open the template in the editor.
     #verificar{    
         width: 10%;
         margin-left: 45%;  
-        margin-right: 45%; 
         font-size:1em;
         color:#660066;
     }
@@ -394,9 +395,9 @@ and open the template in the editor.
         margin-right: 35%;
     }
     
-    #generar{    
-        width: 20%;
-        margin-left: 42%;        
+    #generar input{    
+        width: 10%;
+        margin-left: 42%;      
         font-size:1.2em;
         color:#660066;
     } 
@@ -498,9 +499,9 @@ and open the template in the editor.
         margin-right: 35%;
     }
     
-    #generar{    
-        width: 20%;
-        margin-left: 42%;        
+    #generar input{    
+        width: 8%;
+        margin-left: 42%;       
         font-size:1.4em;
         color:#660066;
     }    
@@ -534,18 +535,15 @@ h1, #sopaT{
     font-weight: bold;
 }
 
-#sopaD, #lista{
+#sopaD, #lista, #generar input{
     text-align: center;
 }
 
+#generar input {
+    font-weight:bold;
+}
 /*.letraSopa{
   //  height: 30px;
    // width: 30px;
     //background-color: #FFFFFF;
 //}*/
-
-#Crear {
-    font-weight: bold;
-    font-size: 1em;
-    color: mediumpurple;
-}

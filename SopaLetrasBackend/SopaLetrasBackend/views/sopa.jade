@@ -58,6 +58,22 @@ html
             span.glyphicon.glyphicon-check
         .col-md-5
 
+    script(type='text/javascript').
+      $('#btn-get').click(function(){
+        // token =  token = $('meta[name="csrf-token"]').attr('content');
+        var sensors_order = getItems('#example-2-1');
+        var node_id =  $('input[id=id]').val();
+        $.ajax({
+        url: 'sensorsorder',
+        type: "post",
+        data: {'order': sensors_order, 'node_id' : node_id},//, '_token' : token},
+        success: function(data){
+        //alert(data);
+        console.log(data);
+        }
+      });
+    });
+
     script(src='/javascripts/jquery-1.10.2.js')
     script(src='/javascripts/bootstrap.js')
     script(src='/javascripts/palabras.js')
