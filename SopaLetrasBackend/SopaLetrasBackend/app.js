@@ -33,8 +33,8 @@ app.get('/', routes.index);
 app.get('/usuarios/registrar', routes.registrarUsuario);
 app.post('/usuarios/registrar', routes.guardarUsuario);
 
-app.get('/sopa', routes.sopa);
-
+app.get('/sopa', routes.mostrarSopa);
+app.post('/sopa', routes.guardarSopa);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

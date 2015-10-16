@@ -78,9 +78,9 @@ and open the template in the editor.
     }
     
     #generar input{    
-        width: 20%;
+        width: 25%;
         margin-left: 40%;       
-        margin-right: 40%;   
+        margin-right: 35%;   
         font-size:1.2em;
         color:#660066;
     } 
@@ -174,7 +174,7 @@ and open the template in the editor.
     
     #mostrar{
         width: 80%;
-        margin: 5% 0 0 32%;
+        margin: 0 0 0 32%;
     }
     
     #generar input{    
@@ -256,7 +256,6 @@ and open the template in the editor.
         background:#979003;
         margin-left: 20px;
         text-align: center;
-        padding-left: 5px;
     }
     
     #sopa2{
@@ -282,15 +281,15 @@ and open the template in the editor.
     
     #mostrar{
         width: 50%;
-        margin: 5% 0 0 37%;
+        margin-left: 50%;
     }
     
     #generar input{    
-        width: 10%;
-        margin-left: 43%;       
+        width: 15%;
+        margin-left: 53%;       
         font-size:1.2em;
         color:#660066;
-    } 
+    }  
     
     #verificar{    
         width: 10%;
@@ -363,7 +362,6 @@ and open the template in the editor.
         background: #979003;
         margin-left: 20px;
         text-align: center;
-        padding-left: 5px;
     }
     
     #sopa2{
@@ -391,8 +389,7 @@ and open the template in the editor.
     
     #mostrar{
         width: 30%;
-        margin-left: 35%;
-        margin-right: 35%;
+        margin-left: 32%;
     }
     
     #generar input{    
@@ -468,7 +465,6 @@ and open the template in the editor.
         background: #979003;
         margin-left: 20px;
         text-align: center;
-        padding-left: 5px;
     }
     
     #sopa2{
@@ -496,12 +492,11 @@ and open the template in the editor.
     #mostrar{
         width: 30%;
         margin-left: 35%;
-        margin-right: 35%;
     }
     
     #generar input{    
-        width: 8%;
-        margin-left: 42%;       
+        width: 10%;
+        margin-left: 45%;      
         font-size:1.4em;
         color:#660066;
     }    

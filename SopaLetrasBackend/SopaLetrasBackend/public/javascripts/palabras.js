@@ -100,7 +100,7 @@ function crearMatriz() {
         //determinar tamaño de la matriz
         max = 2 * palabras[i].length;
 
-        if (max<6){
+        if (max < 6){
             max = 6;
         }
 

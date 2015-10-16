@@ -87,6 +87,14 @@ exports.guardarUsuario = function (req, res) {
  * GET sopa page.
  */
 
-exports.sopa = function (req, res) {
+exports.mostrarSopa = function (req, res) {
     res.render('sopa');
+};
+
+/*
+ * POST register user.
+ */
+
+exports.guardarSopa = function (req, res) {
+    console.log("Entro a guardarSopa", req.body.numero);
 };
