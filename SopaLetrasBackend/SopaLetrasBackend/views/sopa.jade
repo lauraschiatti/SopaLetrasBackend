@@ -16,7 +16,7 @@ html
           .col-sm-9.col-md-9
             form(name='miFormulario', method='POST', action='/sopa')
               label#titulolabel TÍTULO
-              input#titulo(type='text', name='titulo', required='')
+              input#titulo(type='text' name='titulo', required='')
               br
               br
               br
@@ -33,7 +33,7 @@ html
               br   
               br          
               #mostrar            
-              #generar
+            #generar
           .col-sm-3.col-md-3
              img#sopa2(src='images/sopa2.png', alt='prueba')
     #container2(style='display:none')
@@ -61,3 +61,4 @@ html
     script(src='/javascripts/jquery-1.10.2.js')
     script(src='/javascripts/bootstrap.js')
     script(src='/javascripts/palabras.js')
+    script(src='/javascripts/jquery.bootstrap-growl.min.js')

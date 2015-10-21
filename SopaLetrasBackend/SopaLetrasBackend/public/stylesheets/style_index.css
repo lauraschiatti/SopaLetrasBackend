@@ -382,7 +382,7 @@ h2{
 }
 
 
-#iniciar, #crear, #registrarlabel,#iniciarsesionlabel {
+#iniciar, #crear, #reg, #registrarlabel,#iniciarsesionlabel{
     color: black;
     font-weight: bold;
 }
@@ -393,12 +393,18 @@ h2{
     margin-right: 30%;
 }
 
-#crear {
-    width:20%;
-    margin-left: 40%;
-    margin-right: 40%;    
+#crear, #reg {
+    width:25%;       
 }
 
+#crear{
+    margin-left: 20%;
+}
+
+#reg{
+    margin-left: 10%;
+    margin-right: 20%;
+}
 h2 {
     font-weight: bold;
 }

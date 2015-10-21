@@ -13,6 +13,8 @@ var cercanos = new Array();
 var valid = false;
 var validSopa = false;
 var repetidas = true;
+var validLetras = false;
+
 function mostrar() {
     if (valid) {
         var cantidad = parseInt(document.getElementById("numero").value);
@@ -20,11 +22,11 @@ function mostrar() {
         var buttonHTML = "";
 
         for (i = 0; i < cantidad; i++) {
-            textHTML += "<input type='text' id='palabra" + i + "' required><br/><br/>";
+            textHTML += "<input name=palabras[] maxlength='10' type='text' id='palabra" + i + "'><br/><br/>";
         }
 
         document.getElementById("mostrar").innerHTML = textHTML;
-        buttonHTML += "<input type='submit' onclick='validarSopa();validarRepeticiones();crearMatriz();' value='Crear'>";
+        buttonHTML += "<input type='submit' onclick='validarSopa();validarRepeticiones();validarLetras();crearMatriz();' value='Crear'>";
         document.getElementById("generar").innerHTML = buttonHTML;
     }
 }
@@ -35,13 +37,11 @@ function validar() {
     var y = document.forms["miFormulario"]["descripcion"].value;
 
     if (x == null || x == "") {
-        alert("Debe tener nombre");
         valid = false;
         return false;
     }
 
     if (y == null || y == "") {
-        alert("Debe tener descripción");
         valid = false;
         return false;
     }
@@ -54,13 +54,23 @@ function validarSopa() {
         var p = '#palabra' + i;
         var x = $(p).val();
         if (x == null || x == "") {
-            alert("no puede haber campos vacíos");
+            $.bootstrapGrowl("NO PUEDE HABER CAMPOS VACÍOS", {
+                ele: 'body', // which element to append to
+                type: 'danger', // (null, 'info', 'error', 'success')
+                offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
+                align: 'right', // ('left', 'right', or 'center')
+                width: 'auto', // (integer, or 'auto')
+                delay: 5000,
+                allow_dismiss: true,
+                stackup_spacing: 7 // spacing between consecutively stacked growls.
+            });
             validSopa = false;
             return false;
         }
 
     }
 }
+
 function validarRepeticiones() {
     repetidas = false;
     var cantidad = parseInt(document.getElementById("numero").value);
@@ -71,7 +81,16 @@ function validarRepeticiones() {
             var p2 = '#palabra' + j;
             var y = $(p2).val();
             if (x == y) {
-                alert("no puede haber repeticiones");
+                $.bootstrapGrowl("NO PUEDE HABER PALABRA REPETIDAS", {
+                    ele: 'body', // which element to append to
+                    type: 'danger', // (null, 'info', 'error', 'success')
+                    offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
+                    align: 'right', // ('left', 'right', or 'center')
+                    width: 'auto', // (integer, or 'auto')
+                    delay: 5000,
+                    allow_dismiss: true,
+                    stackup_spacing: 7 // spacing between consecutively stacked growls.
+                });
                 repetidas = true;
                 return true;
             }
@@ -80,8 +99,32 @@ function validarRepeticiones() {
     }
 }
 
+function validarLetras() {
+    validLetras = true;
+    var cantidad = parseInt(document.getElementById("numero").value);
+    var letters = /^[A-Za-z]+$/;
+    for (var i = 0; i < cantidad; i++) {
+        var p = '#palabra' + i;
+        var x = $(p).val();
+        if (!x.match(letters)) {
+            $.bootstrapGrowl("SÓLO PUEDES USAR LETRAS  ", {
+                ele: 'body', // which element to append to
+                type: 'danger', // (null, 'info', 'error', 'success')
+                offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
+                align: 'right', // ('left', 'right', or 'center')
+                width: 'auto', // (integer, or 'auto')
+                delay: 5000,
+                allow_dismiss: true,
+                stackup_spacing: 7 // spacing between consecutively stacked growls.
+            });
+            validLetras = false;
+            return false;
+        }
+    }
+}
+
 function crearMatriz() {
-    if (validSopa && !repetidas) {
+    if (validSopa && !repetidas && validLetras) {
         var k = 0;
         var i = 0;
         //obtener número de palabras
@@ -387,14 +430,33 @@ function verifica() {
         }
     }
     if (encontro === 1) {
-        alert("Encontraste la palabra: " + palabra);
+        $.bootstrapGrowl("ENCONTRASTE LA PALABRA: " + palabra, {
+            ele: 'body', // which element to append to
+            type: 'danger', // (null, 'info', 'error', 'success')
+            offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
+            align: 'right', // ('left', 'right', or 'center')
+            width: 'auto', // (integer, or 'auto')
+            delay: 5000,
+            allow_dismiss: true,
+            stackup_spacing: 7 // spacing between consecutively stacked growls.
+        });
+
         for (var k = 0; k < palabra.length; k++) {
             boton = document.getElementById(letraID[k]);
             boton.style.backgroundColor = "#FF0000";
         }
     }
     else {
-        alert("La palabra: " + palabra + " no está en la lista");
+        $.bootstrapGrowl("La palabra: " + palabra + " no está en la lista", {
+            ele: 'body', // which element to append to
+            type: 'danger', // (null, 'info', 'error', 'success')
+            offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
+            align: 'right', // ('left', 'right', or 'center')
+            width: 'auto', // (integer, or 'auto')
+            delay: 5000,
+            allow_dismiss: true,
+            stackup_spacing: 7 // spacing between consecutively stacked growls.
+        });
         for (var k = 0; k < palabra.length; k++) {
             boton = document.getElementById(letraID[k]);
             boton.style.backgroundColor = "LightBlue";
@@ -402,8 +464,17 @@ function verifica() {
     }
 
     if (palabras2.length === 0) {
-        alert("Ganaste");
-        window.location.href = "puntaje.html";
+        $.bootstrapGrowl("GANASTE!!", {
+            ele: 'body', // which element to append to
+            type: 'danger', // (null, 'info', 'error', 'success')
+            offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
+            align: 'right', // ('left', 'right', or 'center')
+            width: 'auto', // (integer, or 'auto')
+            delay: 5000,
+            allow_dismiss: true,
+            stackup_spacing: 7 // spacing between consecutively stacked growls.
+        });
+        //window.location.href = "puntaje.html";
     }
 
     palabraVerifica = new Array();

@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Content Include="public\javascripts\jquery.bootstrap-growl.js" />
+    <Content Include="public\javascripts\jquery.bootstrap-growl.min.js" />
     <Compile Include="routes\Conexion\mySqlConnectionProvider.js" />
     <Compile Include="routes\Conexion\mySqlConnectionString.js" />
     <Compile Include="routes\index.js" />
@@ -40,6 +42,7 @@
     <Content Include="public\stylesheets\styles_sopa.css" />
     <Content Include="public\stylesheets\style_index.css" />
     <Content Include="views\layout.jade" />
+    <Content Include="views\login.jade" />
     <Content Include="views\registrar.jade" />
     <Content Include="views\sopa.jade" />
   </ItemGroup>
