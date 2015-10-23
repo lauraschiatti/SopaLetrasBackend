@@ -5,7 +5,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Sopa de Letras
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')   
+
   body
     #container1
       h1 CREA TU SOPA
@@ -44,10 +45,18 @@ html
         h2#sopaD.col-md-8.col-sm-8
         .col-md-2.col-sm-2
       .row
+        .col-md-9.col-sm-9
+        #countdownExample.col-md-2.col-sm-2  
+            .values
+        .col-md-1.col-sm-1  
+        br
+        br
+        br
+        br
+      .row
         .col-md-1.col-sm-1
         // <div class="col-md-2 col-sm-2" id="lista2"></div>
-        #table.col-md-7.col-sm-7
-        .col-md-1.col-sm-1
+        #table.col-md-8.col-sm-8
         #lista.col-md-2.col-sm-2
         .col-md-1.col-sm-1
       br
@@ -57,8 +66,10 @@ html
           button#verificar(onclick='verifica()')
             span.glyphicon.glyphicon-check
         .col-md-5
-
+    
     script(src='/javascripts/jquery-1.10.2.js')
-    script(src='/javascripts/bootstrap.js')
+    script(src='/javascripts/bootstrap.js')       
     script(src='/javascripts/palabras.js')
     script(src='/javascripts/jquery.bootstrap-growl.min.js')
+    script(src='/javascripts/easytimer.min.js')
+

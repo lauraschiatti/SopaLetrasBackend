@@ -33,6 +33,7 @@
     <Compile Include="app.js" />
     <Content Include="public\javascripts\jquery.bootstrap-growl.js" />
     <Content Include="public\javascripts\jquery.bootstrap-growl.min.js" />
+    <Content Include="public\javascripts\easytimer.min.js" />
     <Compile Include="routes\Conexion\mySqlConnectionProvider.js" />
     <Compile Include="routes\Conexion\mySqlConnectionString.js" />
     <Compile Include="routes\index.js" />

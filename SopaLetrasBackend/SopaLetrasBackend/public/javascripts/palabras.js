@@ -15,6 +15,7 @@ var validSopa = false;
 var repetidas = true;
 var validLetras = false;
 
+
 function mostrar() {
     if (valid) {
         var cantidad = parseInt(document.getElementById("numero").value);
@@ -173,25 +174,26 @@ function crearMatriz() {
         mostrarTitulo();
         mostrarLista();
         mostrarTabla();
+        reloj();
     }
 }
 
 function mostrarTitulo() {
     var t = $("#titulo").val();;
     var tituloHTML = "";
-    tituloHTML += "<h1>" + t + "</h1><br>";
+    tituloHTML += "<h1>" + t.toUpperCase() + "</h1><br>";
     document.getElementById("sopaT").innerHTML = tituloHTML;
 
     var d = $("#descripcion").val();;
     var descripcionHTML = "";
-    descripcionHTML += "<label>" + d + "</label><br><br>";
+    descripcionHTML += "<label>" + d.toUpperCase() + "</label><br><br>";
     document.getElementById("sopaD").innerHTML = descripcionHTML;
 }
 
 function mostrarLista() {
     var listaHTML = "";
     for (var i = 0; i < palabras.length; i++) {
-        listaHTML += "<p>" + palabras[i] + "</p>";
+        listaHTML += "<p>" + palabras[i].toUpperCase() + "</p>";
     }
     document.getElementById("lista").innerHTML = listaHTML;
 }
@@ -498,3 +500,17 @@ function deselecciona(id) {
     }
 }
 
+function reloj(){
+    var timer = new Timer();
+    var n = $("#numero").val();
+    var segundos = n * 60;
+    timer.start({countdown: true, startValues: {seconds: segundos}});
+    $('#countdownExample .values').html(timer.getTimeValues().toString());
+    timer.addEventListener('secondsUpdated', function (e) {
+        $('#countdownExample .values').html(timer.getTimeValues().toString());
+    });
+    timer.addEventListener('targetAchieved', function (e) {
+        $('#countdownExample .values').html('¡Se acabó el tiempo!');
+        //Mostrar página de que perdiste
+    });
+}
