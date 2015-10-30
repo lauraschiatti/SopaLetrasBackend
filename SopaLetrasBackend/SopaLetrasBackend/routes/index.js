@@ -1,5 +1,7 @@
 ﻿
 var connectionProvider = require('./Conexion/mySqlConnectionProvider.js');
+var localStorage = require('localStorage');
+
 
 /*
  * GET home page.
@@ -117,8 +119,26 @@ exports.login = function (req, res) {
                     res.redirect('back');
                    
                 } else {
-                    //Pasar a la pagina de sopa
-                    res.redirect('/sopa');                    
+                    //var conexion2 = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+                    //var sql = "SELECT * FROM puntajes WHERE id_usuario=" + conexion2.escape(result[0].id);
+                    
+                    //if (conexion2) {
+                      //  conexion2.query(sql, function (error, result2) {
+                        //    if (error) {
+                          //      throw error;
+                            //}
+                            //else {
+                              //  console.log("Result query2", result2[0].puntos);
+                                //El usuario esta en result.Guardar usuario y puntaje en localStorage
+                                //var jugador = [result[0].nickname, result2[0].puntos];
+                                //localStorage.setItem("0", JSON.stringify(jugador));
+                                //localStorage.setItem("0", "hola");
+                                                             
+                                //Pasar a la pagina de sopa
+                                res.redirect('/sopa');
+                            //}
+                        //});
+                    //}                    
                 }
             }            
         });
@@ -209,3 +229,20 @@ exports.guardarSopa = function (req, res) {
 
     
 };
+
+/*
+ * GET ganaste.
+ */
+
+exports.mostrarGanaste = function (req, res) {
+    res.render('ganaste');
+};
+
+/*
+ * GET perdiste.
+ */
+
+exports.mostrarPerdiste = function (req, res) {
+    res.render('perdiste');
+};
+

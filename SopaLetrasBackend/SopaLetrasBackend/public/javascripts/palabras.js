@@ -1,4 +1,10 @@
-﻿var palabras = new Array();
+﻿if (typeof (Storage) !== "undefined") {
+    //alert("Habilitado LocalStorage");
+} else {
+    alert("No habilitado LocalStorage");
+}
+
+var palabras = new Array();
 var palabras2 = new Array();
 var palabraVerifica = new Array();
 var letraID = new Array();
@@ -480,7 +486,7 @@ function verifica() {
     }
 
     if (palabras2.length === 0) {
-        $.bootstrapGrowl("GANASTE!!", {
+        /*$.bootstrapGrowl("GANASTE!!", {
             ele: 'body', // which element to append to
             type: 'danger', // (null, 'info', 'error', 'success')
             offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
@@ -489,8 +495,8 @@ function verifica() {
             delay: 5000,
             allow_dismiss: true,
             stackup_spacing: 7 // spacing between consecutively stacked growls.
-        });
-        //window.location.href = "puntaje.html";
+        });*/
+        window.location.href = "/ganaste";
     }
 
     palabraVerifica = new Array();
@@ -525,7 +531,8 @@ function reloj(){
     });
     timer.addEventListener('targetAchieved', function (e) {
         $('#countdownExample .values').html('¡Se acabó el tiempo!');
-        //Mostrar página de que perdiste
+        //Mostrar página de que perdist
+        window.location.href = "/perdiste";
     });
 }
 

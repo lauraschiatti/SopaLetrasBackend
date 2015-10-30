@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Content Include="public\images\ganaste.gif" />
+    <Content Include="public\images\perdiste.gif" />
     <Content Include="public\javascripts\jquery.bootstrap-growl.js" />
     <Content Include="public\javascripts\jquery.bootstrap-growl.min.js" />
     <Content Include="public\javascripts\easytimer.min.js" />
@@ -42,8 +44,10 @@
     <Content Include="public\javascripts\palabras.js" />
     <Content Include="public\stylesheets\styles_sopa.css" />
     <Content Include="public\stylesheets\style_index.css" />
+    <Content Include="views\ganaste.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\login.jade" />
+    <Content Include="views\perdiste.jade" />
     <Content Include="views\registrar.jade" />
     <Content Include="views\sopa.jade" />
   </ItemGroup>

@@ -1,0 +1,26 @@
+﻿doctype html
+html
+  head    
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Sopa de Letras
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')   
+
+  body
+   #container
+        .row
+          .col-sm-3.col-md-3
+          .col-sm-6.col-md-6(style='font-weight: bold; text-align: center; font-size: 2em; color:red;')
+             p ¡Perdiste!
+             br
+             img(src='images/perdiste.gif', alt='prueba')
+             br
+             br
+             p
+                a(href='/sopa')(style='font-weight: bold; text-align: center; text-decoration: underline') ¿Quieres volver a intentarlo?
+          .col-sm-3.col-md-3
+    
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src='/javascripts/bootstrap.js')      
+

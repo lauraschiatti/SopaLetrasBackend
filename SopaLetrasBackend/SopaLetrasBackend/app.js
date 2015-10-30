@@ -43,6 +43,9 @@ app.post('/usuarios/login', routes.login);
 app.get('/sopa', routes.mostrarSopa);
 app.post('/sopa', routes.guardarSopa);
 
+app.get('/ganaste', routes.mostrarGanaste);
+app.get('/perdiste', routes.mostrarPerdiste);
+
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
