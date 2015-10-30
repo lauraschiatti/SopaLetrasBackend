@@ -82,7 +82,6 @@ exports.guardarUsuario = function (req, res) {
     connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);
 };
 
-
 /*
  * GET login user.
  */
@@ -92,11 +91,40 @@ exports.mostrarLogin = function (req, res) {
 };
 
 /*
- * POST register user.
+ * POST login user.
  */
 
 exports.login = function (req, res) {
-    console.log("Entro a login");    
+     // Sacar valores del request body
+    var email= req.body.email;
+    var contrasena = req.body.password;
+       
+    //Validar que no exista ese nickname y/o ni correo    
+    var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+    var sql = "SELECT * FROM usuarios WHERE correo=" + conexion.escape(email) + "AND contraseña ="+ conexion.escape(contrasena);
+        
+    if (conexion) {
+        conexion.query(sql, function (error, result) {
+            if (error) {
+                throw error;
+            }
+            else {
+                if (result == "") {
+                    console.log("Email o contraseña inválidos");
+                    
+                    //Devolver a la pagina de registro         
+                    req.flash('error', 'Email o contraseña inválidos');
+                    res.redirect('back');
+                   
+                } else {
+                    //Pasar a la pagina de sopa
+                    res.redirect('/sopa');                    
+                }
+            }            
+        });
+    }
+    
+    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);   
 };
 
 /*

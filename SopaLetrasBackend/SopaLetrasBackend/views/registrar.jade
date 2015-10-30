@@ -12,34 +12,42 @@ block content
             .message.error
             span(style='font-weight:bold')= messages.error
            
-
     form.contenedor(id='registrar-form', method='POST', action='/usuarios/registrar')
       .form-group
         label#namelabel(for='name') Nombre
         .input-group
           span.input-group-addon
-            span.glyphicon.glyphicon-user
-          input#name.form-control(type='text', name='name', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='')
+            span.glyphicon.glyphicon-envelope
+          input#name.form-control(type='text', maxLength= '40', name='name', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='' onKeyDown="contar(40, 'name', 'contador')" onKeyUp="contar(40, 'name', 'contador')" )
+        .caracteres
+           input#contador(disabled='', size='2', value='40')      
       .form-group
         label#nicknamelabel(for='nickname') Nombre de usuario
         .input-group
           span.input-group-addon
             span.glyphicon.glyphicon-user
-          input#nickname.form-control(type='text', name='nickname', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='')
-      .form-group
+          input#nickname.form-control(type='text', , maxLength= '20' name='nickname', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='' onKeyDown="contar(20, 'nickname','contador2')" onKeyUp="contar(20, 'nickname', 'contador2')")
+        .caracteres
+           input#contador2(disabled='', size='2', value='20')    
         label#emailabel(for='email') Correo electrónico
         .input-group
           span.input-group-addon
             span.glyphicon.glyphicon-envelope
-          input#correo.form-control(type='email', name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Email', required='')
+          input#correo.form-control(type='email', maxLength= '40', name="email" , pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Email', required='' onKeyDown="contar(40, 'correo', 'contador3')",  onKeyUp="contar(40, 'correo', 'contador3')" )
+        .caracteres
+           input#contador3(disabled='', size='2', value='40')   
       .form-group
         label#passlabel(for='password') Contraseña
         .input-group
           span.input-group-addon
             span.glyphicon.glyphicon-lock
-          input#password.form-control(type='password', name='password', title='Contraseña', required='')
-      
+          input#password.form-control(type='password', maxLength= '20', name='password', title='Contraseña', required='',  onKeyDown="contar(20, 'password', 'contador4')" , onKeyUp="contar(20, 'password', 'contador4')" )
+        .caracteres
+           input#contador4(disabled='', size='2', value='20') 
       br
-  
-      input#crear.btn.btn-info(type='submit', value='Ok')
-      a#reg.btn.btn-danger(href='/usuarios/login') Login
+      br  
+      input#crear.btn.btn-info.btn-block(type='submit', value='Ok')
+      span#reg
+        |  Si ya eres un usuario registrado, 
+        a#reg_a(href='/usuarios/login') Inicia sesión
+      

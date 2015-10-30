@@ -17,12 +17,12 @@ html
           .col-sm-9.col-md-9
             form(name='miFormulario', method='POST', action='/sopa')
               label#titulolabel TÍTULO
-              input#titulo(type='text' name='titulo', required='')
+              input#titulo(type='text' name='titulo', maxLength = '40', required='')
               br
               br
               br
               label#descripcionlabel DESCRIPCIÓN
-              input#descripcion(type='text', name='descripcion', required='')
+              input#descripcion(type='text', , maxLength = '100', name='descripcion', required='')
               br
               br
               br
@@ -31,34 +31,37 @@ html
               button#check(onclick='validar();mostrar();')
                 i.glyphicon.glyphicon-check                
               br
-              br   
-              br          
+              br
+              .visible-lg.visible-sm
+                br          
               #mostrar            
             #generar
           .col-sm-3.col-md-3
              img#sopa2(src='images/sopa2.png', alt='prueba')
     #container2(style='display:none')
-      .row
-        #sopaT.col-md-12.col-sm-12
-      .row
-        .col-md-2.col-sm-2
-        h2#sopaD.col-md-8.col-sm-8
-        .col-md-2.col-sm-2
-      .row
-        .col-md-9.col-sm-9
-        #countdownExample.col-md-2.col-sm-2  
+      .col-md-8.col-sm-8
+         .row
+            #sopaT
+         .row
+            #sopaD
+      .col-md-1.col-sm-1  
+      #tablero.col-md-3.col-sm-3
+        .row
+          .col-md-4.col.sm-4
+              h4 Usuario:
+          .col-md-8.col.sm-8
+          h4#usuario Usuario
+        .row
+          .col-md-4.col.sm-4
+              h4 Puntos:
+          .col-md-8.col.sm-8
+          h4#puntos Puntos
+        br
+        #countdownExample 
             .values
-        .col-md-1.col-sm-1  
-        br
-        br
-        br
-        br
       .row
-        .col-md-1.col-sm-1
-        // <div class="col-md-2 col-sm-2" id="lista2"></div>
-        #table.col-md-8.col-sm-8
+        #table.col-md-9.col-sm-9        
         #lista.col-md-2.col-sm-2
-        .col-md-1.col-sm-1
       br
       .row
         .col-md-5

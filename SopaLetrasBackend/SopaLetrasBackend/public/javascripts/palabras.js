@@ -186,15 +186,26 @@ function mostrarTitulo() {
 
     var d = $("#descripcion").val();;
     var descripcionHTML = "";
-    descripcionHTML += "<label>" + d.toUpperCase() + "</label><br><br>";
+    descripcionHTML += "<p>" + d.toUpperCase() + "</p><br><br>";
     document.getElementById("sopaD").innerHTML = descripcionHTML;
 }
 
 function mostrarLista() {
     var listaHTML = "";
     for (var i = 0; i < palabras.length; i++) {
-        listaHTML += "<p>" + palabras[i].toUpperCase() + "</p>";
+        //  var p=palabra.toLowerCase();
+        //  alert("Probamos con la palabra"+p);
+
+        if (palabras[i].toUpperCase() === palabra) {
+
+            listaHTML += "<p><strike>" + palabras[i].toUpperCase() + "</strike></p>";
+
+        } else {
+            listaHTML += "<p>" + palabras[i].toUpperCase() + "</p>";
+
+        }
     }
+
     document.getElementById("lista").innerHTML = listaHTML;
 }
 
@@ -366,30 +377,32 @@ function llenarLetrasAleatorias() {
 function seleccionarLetra(id) {
     var boton = document.getElementById(id);
 
-    if (cercanos.length === 0) {
+    if (letraID[aux - 1] === id) {
+        boton.style.backgroundColor = "LightBlue";
+        aux--;
+        letraID.splice(aux, 1);
+        palabraVerifica.splice(aux, 1);
+        palabra = palabra.substring(0, aux);
         cercano(id);
-        boton.style.backgroundColor = "#FF0000";
-        letraID[aux] = id;
-        palabraVerifica[aux] = boton.value;
-        palabra += palabraVerifica[aux];
-        aux++;
+
     } else {
-        for (var i = 0; i < cercanos.length; i++) {
-            if (id === cercanos[i]) {
-                cercano(id);
-                boton.style.backgroundColor = "#FF0000";
-                letraID[aux] = id;
-                palabraVerifica[aux] = boton.value;
-                palabra += palabraVerifica[aux];
-                aux++;
-                /*for(var j=0; j<letraID.length; j++){
-                    if(letraID[i]===id)
-                        boton.style.backgroundColor="LightBlue";
-                        aux--;
-                        letraID.splice(aux,1);
-                        palabraVerifica.splice(aux,1);
-                        palabra.substring(0,aux);
-                }*/
+        if (cercanos.length === 0) {
+            cercano(id);
+            boton.style.backgroundColor = "#FF0000";
+            letraID[aux] = id;
+            palabraVerifica[aux] = boton.value;
+            palabra += palabraVerifica[aux];
+            aux++;
+        } else {
+            for (var i = 0; i < cercanos.length; i++) {
+                if (id === cercanos[i]) {
+                    cercano(id);
+                    boton.style.backgroundColor = "#FF0000";
+                    letraID[aux] = id;
+                    palabraVerifica[aux] = boton.value;
+                    palabra += palabraVerifica[aux];
+                    aux++;
+                }
             }
         }
     }
@@ -427,6 +440,7 @@ function verifica() {
     var boton;
     for (var j = 0; j < palabras2.length; j++) {
         if (palabras2[j].toUpperCase() === palabra) {
+            mostrarLista();
             encontro = 1;
             palabras2.splice(j, 1);
         }
@@ -513,4 +527,17 @@ function reloj(){
         $('#countdownExample .values').html('¡Se acabó el tiempo!');
         //Mostrar página de que perdiste
     });
+}
+
+//Caracteres restantes
+function contar(valor, id, contador) {
+    var max = valor;
+    var cadena = document.getElementById(id).value;
+    var longitud = cadena.length;
+
+    if (longitud <= max) {
+        document.getElementById(contador).value = max - longitud;
+    } else {
+        document.getElementById(id).value = cadena.substr(0, max);
+    }
 }

@@ -55,6 +55,23 @@ and open the template in the editor.
     label{
         font-size: 1em;
     }
+
+    .contenedor {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #reg{
+       width: 80%;       
+       font-size: 1em;
+    }
+
+    #reg_a{
+       width: 80%;
+       margin: 10% 10% 10% 30%;   
+       font-size: 1em;
+    }
 }
 
 @media (min-width: 576px) and (max-width : 767px){    
@@ -82,7 +99,7 @@ and open the template in the editor.
         border-radius: 50%;
         height: 7em;
         width: 7em;
-        //position: relative;
+        /*position: relative;*/
     }
     
     .glyphicon-play{
@@ -103,13 +120,24 @@ and open the template in the editor.
     }
     
     label{
-        font-size: 0.9em;
+        font-size: 1.1em;
     }
     
-    .modal-dialog{
-        width: 70%;        
-        margin-left: 15%;
-        margin-right: 15%;
+    .contenedor {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    #reg{
+       width: 80%;
+       margin: 0 10% 10% 10%;   
+       font-size: 1.1em;
+    }
+
+    #reg_a{
+       width: 80%;
+       font-size: 1.1em;
     }
 }
 
@@ -163,29 +191,41 @@ and open the template in the editor.
         font-size: 1.1em;
     }
     
-    .modal-dialog{
-        width: 50%;        
-        margin-left: 25%;
-        margin-right: 25%;
+    .contenedor {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
     }
+
+    #reg{
+       width: 80%;
+       margin: 0 10% 10% 10%;   
+       font-size: 1.2em;
+    }
+
+    #reg_a{
+       width: 80%;
+       font-size: 1em;
+    }
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    body{
+    body {
         padding: 5%;
     }
-    
-    h1{
+
+    h1 {
         margin-top: 30px;
-        font-size: 4.2em; 
-    } 
-    
-    h2{
+        font-size: 4.2em;
+    }
+
+    h2 {
         text-align: right;
         padding-right: 8%;
-        font-size: 2.4em; 
+        font-size: 2.4em;
     }
-    
+
     /* ---- Boton de comenzar ------ */
     /* Tomado de http://bootsnipp.com/snippets/featured/circle-button-with-3d-shadow-and-hover-effect*/
     .orange-circle-button {
@@ -201,8 +241,8 @@ and open the template in the editor.
         width: 11em;
         //position: relative;
     }
-    
-    .glyphicon-play{
+
+    .glyphicon-play {
         font-size: 4.9em;
         margin-top: 25%;
         text-align: center;
@@ -210,25 +250,37 @@ and open the template in the editor.
         font-weight: bold;
     }
     /* ---- Boton de comenzar ------ */
-    
-    #sopa{
+
+    #sopa {
         width: 90%;
         margin: 30px 5% 0 5%;
     }
-    
-    #iniciarsesionlabel, #registrarlabel{
-        font-size: 1.6em;        
+
+    #iniciarsesionlabel, #registrarlabel {
+        font-size: 1.6em;
     }
-    
-    label{
-        font-size: 1.1em;
+
+    label {
+        font-size: 1.3em;
     }
-    
-    .modal-dialog{
-        width: 50%;        
+
+    .contenedor {
+        width: 50%;
         margin-left: 25%;
         margin-right: 25%;
     }
+
+    #reg{
+       width: 80%;
+       margin: 0 10% 10% 10%;   
+       font-size: 1.2em;
+    }
+
+    #reg_a{
+       width: 80%;
+       font-size: 1em;
+    }
+
 }
 
 @media (min-width : 1200px){    
@@ -247,7 +299,7 @@ and open the template in the editor.
     .orange-circle-button {
         box-shadow: 7px 8px 5px 5px rgba(0,0,0,0.1);
         border: .9em solid #E84D0E;
-        //font-size: 1em;
+        /*font-size: 1em;*/
         line-height: 4.1em;
         color: #ffffff;
         background-color: #e84d0e;
@@ -255,7 +307,7 @@ and open the template in the editor.
         border-radius: 50%;
         height: 11em;   
         width: 11em;
-        //position: relative;
+        /*position: relative;*/
     }
     
     .glyphicon-play{
@@ -281,17 +333,28 @@ and open the template in the editor.
     label{
         font-size: 1.3em;
     }
-    
-    .modal-dialog{
-        width: 40%;        
+
+    .contenedor {
+        width: 40%;
         margin-left: 30%;
         margin-right: 30%;
+    }
+        
+    #reg{
+       width: 80%;
+       margin: 0 10% 10% 10%;   
+       font-size: 1.4em;
+    }
+
+    #reg_a{
+       width: 80%;
+       font-size: 1em;
     }
 }
 
 body{
     padding-top: 2%;
-    //background-color: #FFB139;
+    /*background-color: #FFB139;*/
     background: url("../images/img02.jpg");
 }
 
@@ -332,7 +395,7 @@ h2{
     text-align: center;
 }
 
-//Tomado de http://jsfiddle.net/Kx2k5/
+/*Tomado de http://jsfiddle.net/Kx2k5/ */
 .item {    
     line-height: 50px;
     text-align: center;
@@ -350,9 +413,9 @@ h2{
     top: 10px; 
     left: 35px;  
     border-radius: 50%;
-    //border: 1px solid red;   
+    /*border: 1px solid red;*/   
     background: #cc66ff;
-    padding: 58px 25px 25px 22px;
+    padding: 48px 25px 25px 22px;
     color: black;
     font-weight: bold;
     font-size: 1.2em;
@@ -369,9 +432,9 @@ h2{
     top: 100px; 
     left: 75px;  
     border-radius: 50%;
-    //border: 1px solid blue;   
+    /*border: 1px solid blue;*/   
     background: #660066;
-    padding: 62px 35px 35px 32px;
+    padding: 52px 35px 35px 32px;
     color: white;
     font-weight: bold;
     font-size: 1.2em;
@@ -382,29 +445,47 @@ h2{
 }
 
 
-#iniciar, #crear, #reg, #registrarlabel,#iniciarsesionlabel{
+#iniciar, #crear, #registrarlabel,#iniciarsesionlabel{
     color: black;
     font-weight: bold;
 }
 
-.contenedor {
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
-}
 
-#crear, #reg {
-    width:25%;       
-}
-
-#crear{
-    margin-left: 20%;
-}
-
-#reg{
-    margin-left: 10%;
-    margin-right: 20%;
-}
 h2 {
     font-weight: bold;
 }
+
+#reg {
+    color: black;
+    font-weight: bold;        
+    text-align: center;
+    margin: 100px 10% 10% 10%; 
+}
+
+#reg_a {    
+    font-weight: bold;
+    text-align: center;
+    color: blue;
+    text-decoration: underline;
+}
+
+#crear {
+    margin-bottom: 40px;
+}
+
+
+.caracteres {
+    margin-top: 10px; 
+}
+
+#contador, #contador2, #contador3, #contador4{
+    padding: 0;
+    width: 8%;
+    text-align:center;
+    border-color: #ff00dc;
+    border-radius: 1px;
+    font-weight: bold;
+    float:right;
+    font-size: 0.9em;
+}
+

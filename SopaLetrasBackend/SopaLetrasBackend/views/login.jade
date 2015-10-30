@@ -21,15 +21,19 @@ block content
         .input-group
           span.input-group-addon
             span.glyphicon.glyphicon-envelope
-          input#correo.form-control(type='email', name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Email', required='')
+          input#correo.form-control(type='email', name="email" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Email', required='' )
+
+      br
       .form-group
         label#passlabel(for='password') Contraseña
         .input-group
           span.input-group-addon
             span.glyphicon.glyphicon-lock
-          input#password.form-control(type='password', name='password', title='Contraseña', required='')
+          input#password.form-control(type='password', maxLength= '20', name='password', title='Contraseña', required='')
       
       br
-  
-      input#crear.btn.btn-info(type='submit', value='Ok')
-      a#reg.btn.btn-danger(href='/usuarios/registrar') Registrarse
+      br
+      input#crear.btn.btn-info.btn-block(type='submit', value='Ok')
+      span#reg
+        |  Si no eres usuario registrado, 
+        a#reg_a(href='/usuarios/registrar') regístrate
