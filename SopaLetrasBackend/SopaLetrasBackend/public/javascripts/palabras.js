@@ -21,8 +21,8 @@ var validSopa = false;
 var repetidas = true;
 var validLetras = false;
 var listaPalabras = new Array();
-var texto;
-var letrero;
+//var texto;
+//var letrero;
 
 function mostrar() {
     if (valid) {
@@ -30,14 +30,52 @@ function mostrar() {
         var textHTML = "";
         var buttonHTML = "";
 
+        textHTML += " <form id='miLista'>";
         for (i = 0; i < cantidad; i++) {
-            textHTML += "<input name='palabra' maxlength='10' type='text' id='palabra" + i + "'><br/><br/>";
+            textHTML += "<div><input type='text' name='palabra[]' id='palabra" + i + "'maxlength='10' class='palabra' data=" + i + ">";
+            textHTML += "<span id='aviso" + i + "' class='aviso' data="+i+"></span></div><br><br>";
         }
+        textHTML += " </form>";
 
         document.getElementById("mostrar").innerHTML = textHTML;
         buttonHTML += "<input type='submit' onclick='validarSopa();validarRepeticiones();validarLetras();crearMatriz();' value='Crear'>";
         document.getElementById("generar").innerHTML = buttonHTML;
         document.getElementById("checkbox").style.display = 'inline';
+
+        var form = $("#miLista");
+        var t;
+        var l;
+        var texto;
+        var letrero;
+
+        t='.palabra';
+        l='.aviso';
+        texto=$(t);
+        letrero=$(l);
+        texto.blur(vLetras);
+    }
+}
+
+function vLetras() {
+    //var p='#palabra'+j;
+    var tv = $(this).val();
+    var letters = /^[A-Za-z]+$/;
+    var data = $(this).attr("data");
+
+    if (tv.match(letters)) {
+        $(this).removeClass("error");
+        $("#aviso" + data).text("");
+        return true;
+
+    } else {
+        //alert("palabra: "+j);
+        //  alert("error");
+        $(this).addClass("error");
+
+        $("#aviso" + data).text("Sólo se pueden usar letras");
+        //   j=0;
+        return false;
+
     }
 }
 
@@ -67,7 +105,7 @@ function validarLetras(){
         var p='#palabra'+i;
         var x=$(p).val();
         if(!x.match(letters)){
-            alert("Solo puedes usar letras");  
+            //alert("Solo puedes usar letras");  
             validLetras=false;
             return false;
         }
@@ -82,7 +120,7 @@ function validarSopa() {
         var p = '#palabra' + i;
         var x = $(p).val();
         if (x == null || x == "") {
-            alert("no puede haber campos vacíos");
+            //alert("no puede haber campos vacíos");
             validSopa = false;
             return false;
         }

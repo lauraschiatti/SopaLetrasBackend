@@ -955,3 +955,8 @@ h4 {
     color: black;
     text-align: center;
 }
+
+.error{
+    background: #f8dbdb;
+    background-color: #e77776;
+}
