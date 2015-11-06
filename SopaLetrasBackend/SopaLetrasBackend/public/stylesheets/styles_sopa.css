@@ -153,6 +153,31 @@ and open the template in the editor.
         margin-top: 10px;
         font-size: 1em;
     }
+
+    #contador, #contador2{
+        padding: 1px;
+        margin:4% 20% 2% 69%;
+        width: 11%;
+        text-align:center;
+        border-color: #ff00dc;
+        border-radius: 1px;
+        font-weight: bold;
+        font-size: 1em;
+    }
+
+    #gif{
+        width: 90%;
+    }
+
+    #mensaje {
+        font-size: 1.3em;
+    }
+
+    #checkbox{
+        width: 20%;
+        margin: 0 20% 0 20%;
+        font-size:1em;
+    }
 }
 
 @media (min-width: 460px) and (max-width : 767px){    
@@ -169,7 +194,7 @@ and open the template in the editor.
     
     input[type="text"]{ 
         height: 40px; 
-        width: 40%;
+        width: 38%;
         border: 2px solid #aaa; 
         box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset; 
         border-radius: 5px; 
@@ -189,7 +214,7 @@ and open the template in the editor.
     
     input[type="number"]{ 
         height: 40px; 
-        width: 15%;
+        width: 12%;
         border: 2px solid #aaa; 
         box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset; 
         border-radius: 5px; 
@@ -200,7 +225,7 @@ and open the template in the editor.
     }
     
     #check{     
-        font-size:1.8em;
+        font-size:1.7em;
         color:white;
         background:#979003;
         margin-left: 20px;
@@ -217,7 +242,7 @@ and open the template in the editor.
     #container{
         width: 90%;
         margin: 5% 5% 0 5%;
-        padding: 4%;
+        padding: 3%;
         border: 10px solid #660066;
         border-radius: 20px;
     }
@@ -303,6 +328,31 @@ and open the template in the editor.
     #lista {
         margin-top: 10px;
         font-size: 1.2em;
+    }
+        
+    #contador, #contador2{
+        margin: 2%;
+        width: 9%;
+        padding: 2px;
+        text-align:center;
+        border-color: #ff00dc;
+        border-radius: 1px;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+
+     #gif{
+        width: 70%;
+    }
+
+    #mensaje {
+        font-size: 1.3em;
+    }
+
+    #checkbox{
+        width: 20%;
+        margin: 9% 20% 9% 20%;
+        font-size:1em;
     }
 }
 
@@ -417,8 +467,7 @@ and open the template in the editor.
        font-size: 1.3em;
        text-align: center;
        width: 70%;
-       margin: 10px 15% 0 15%
-       margin-right: 0;   
+       margin: 10px 15% 0 15%; 
     }
 
     #sopaT{
@@ -428,7 +477,7 @@ and open the template in the editor.
         margin-right: 10%;
     }
 
-   #sopaD {
+    #sopaD {
         font-size: 110%;
         font-weight: bold;
         width: 70%;
@@ -436,7 +485,7 @@ and open the template in the editor.
         margin-right: 15%;
     }
 
-   #lista {
+    #lista {
         font-size: 1.2em;
         margin-top: 3%;
         margin-left: 2%;
@@ -459,6 +508,33 @@ and open the template in the editor.
 
     h4 {
         font-size: 1em;
+    }
+        
+    #contador, #contador2{
+        margin: 2%;
+        width: 6%;
+        padding: 2px;
+        text-align:center;
+        border-color: #ff00dc;
+        border-radius: 1px;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+
+    #div{
+        width: 50%;
+        margin: 1% 25% 0 25%;
+        font-size:1.6em;        
+    }
+
+    #gif{
+        width: 98%;
+    }
+
+    #checkbox{
+        width: 20%;
+        margin: 9% 20% 9% 30%;
+        font-size:1.2em;
     }
 }
 
@@ -611,6 +687,29 @@ and open the template in the editor.
         border:4px solid #000000;
         text-align: center;
     }
+    
+    #contador, #contador2{
+        margin: 2%;
+        width: 8%;
+        padding: 1px;
+        text-align:center;
+        border-color: #ff00dc;
+        border-radius: 1px;
+        font-weight: bold;
+        font-size: 1.3em;
+     }
+
+     #div{
+        width: 50%;
+        margin: 1% 25% 0 25%;
+        font-size:1.7em;        
+     }
+
+     #checkbox{
+        width: 20%;
+        margin: 10% 0 10% 20%;
+        font-size:1.3em;
+     }
 }
 
 @media (min-width : 1200px){    
@@ -756,6 +855,29 @@ and open the template in the editor.
         border:4px solid #000000;
         text-align: center;
     }
+        
+    #contador, #contador2{
+        margin: 2%;
+        width: 7%;
+        padding: 1px;
+        text-align:center;
+        border-color: #ff00dc;
+        border-radius: 1px;
+        font-weight: bold;
+        font-size: 1.4em;
+    }
+
+    #div{
+        width: 50%;
+        margin: 1% 25% 0 25%;
+        font-size:2em;        
+    }
+
+    #checkbox{
+        width: 20%;
+        margin: 10% 2% 10% 25%;
+        font-size:1.5em;
+    }
 }
 
 body{
@@ -812,4 +934,24 @@ h4 {
     border: 1px outset blue;
     background-color: lightBlue;
     font-weight: bold;
+}
+
+#mensaje{
+    font-weight: bold;  
+    text-decoration: underline;
+    color:blue;
+}
+
+#div{
+    text-align:center;
+}
+
+#contador, #contador2 {
+    color: black;
+}
+
+#checkbox{
+    display: none;
+    color: black;
+    text-align: center;
 }

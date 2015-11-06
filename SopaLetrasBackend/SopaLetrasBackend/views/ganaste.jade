@@ -8,16 +8,12 @@ html
     link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')   
 
   body
-   #container
-        .row
-          .col-sm-4.col-md-4
-          .col-sm-5.col-md-5
-             img(src='images/ganaste.gif', alt='prueba')
-             br
-             br
-             p
-                 a(href='/sopa')(style='font-size: 2em; font-weight: bold; text-align: center; text-decoration: underline') ¿Quieres seguir jugando?
-          .col-sm-3.col-md-3
+    #container
+       #div
+          img#gif(src='images/ganaste.gif', alt='ganaste')
+          br
+          br
+          a#mensaje(href='/sopa') ¿Quiéres seguir jugando?
     
     script(src='/javascripts/jquery-1.10.2.js')
     script(src='/javascripts/bootstrap.js')      

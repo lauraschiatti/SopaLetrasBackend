@@ -20,7 +20,9 @@ var valid = false;
 var validSopa = false;
 var repetidas = true;
 var validLetras = false;
-
+var listaPalabras = new Array();
+var texto;
+var letrero;
 
 function mostrar() {
     if (valid) {
@@ -29,12 +31,13 @@ function mostrar() {
         var buttonHTML = "";
 
         for (i = 0; i < cantidad; i++) {
-            textHTML += "<input name=palabras[] maxlength='10' type='text' id='palabra" + i + "'><br/><br/>";
+            textHTML += "<input name='palabra' maxlength='10' type='text' id='palabra" + i + "'><br/><br/>";
         }
 
         document.getElementById("mostrar").innerHTML = textHTML;
         buttonHTML += "<input type='submit' onclick='validarSopa();validarRepeticiones();validarLetras();crearMatriz();' value='Crear'>";
         document.getElementById("generar").innerHTML = buttonHTML;
+        document.getElementById("checkbox").style.display = 'inline';
     }
 }
 
@@ -44,14 +47,32 @@ function validar() {
     var y = document.forms["miFormulario"]["descripcion"].value;
 
     if (x == null || x == "") {
+        alert("Debe tener nombre");
         valid = false;
         return false;
     }
 
     if (y == null || y == "") {
+        alert("Debe tener descripción");
         valid = false;
         return false;
     }
+}
+
+function validarLetras(){
+    validLetras=true;
+    var cantidad = parseInt(document.getElementById("numero").value);
+    var letters = /^[A-Za-z]+$/;
+    for(var i=0; i < cantidad; i++){
+        var p='#palabra'+i;
+        var x=$(p).val();
+        if(!x.match(letters)){
+            alert("Solo puedes usar letras");  
+            validLetras=false;
+            return false;
+        }
+    }
+     
 }
 
 function validarSopa() {
@@ -61,16 +82,7 @@ function validarSopa() {
         var p = '#palabra' + i;
         var x = $(p).val();
         if (x == null || x == "") {
-            $.bootstrapGrowl("NO PUEDE HABER CAMPOS VACÍOS", {
-                ele: 'body', // which element to append to
-                type: 'danger', // (null, 'info', 'error', 'success')
-                offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
-                align: 'right', // ('left', 'right', or 'center')
-                width: 'auto', // (integer, or 'auto')
-                delay: 5000,
-                allow_dismiss: true,
-                stackup_spacing: 7 // spacing between consecutively stacked growls.
-            });
+            alert("no puede haber campos vacíos");
             validSopa = false;
             return false;
         }
@@ -88,44 +100,11 @@ function validarRepeticiones() {
             var p2 = '#palabra' + j;
             var y = $(p2).val();
             if (x == y) {
-                $.bootstrapGrowl("NO PUEDE HABER PALABRA REPETIDAS", {
-                    ele: 'body', // which element to append to
-                    type: 'danger', // (null, 'info', 'error', 'success')
-                    offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
-                    align: 'right', // ('left', 'right', or 'center')
-                    width: 'auto', // (integer, or 'auto')
-                    delay: 5000,
-                    allow_dismiss: true,
-                    stackup_spacing: 7 // spacing between consecutively stacked growls.
-                });
+                alert("no puede haber repeticiones");
                 repetidas = true;
                 return true;
             }
 
-        }
-    }
-}
-
-function validarLetras() {
-    validLetras = true;
-    var cantidad = parseInt(document.getElementById("numero").value);
-    var letters = /^[A-Za-z]+$/;
-    for (var i = 0; i < cantidad; i++) {
-        var p = '#palabra' + i;
-        var x = $(p).val();
-        if (!x.match(letters)) {
-            $.bootstrapGrowl("SÓLO PUEDES USAR LETRAS  ", {
-                ele: 'body', // which element to append to
-                type: 'danger', // (null, 'info', 'error', 'success')
-                offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
-                align: 'right', // ('left', 'right', or 'center')
-                width: 'auto', // (integer, or 'auto')
-                delay: 5000,
-                allow_dismiss: true,
-                stackup_spacing: 7 // spacing between consecutively stacked growls.
-            });
-            validLetras = false;
-            return false;
         }
     }
 }
