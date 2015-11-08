@@ -21,8 +21,6 @@ var validSopa = false;
 var repetidas = true;
 var validLetras = false;
 var listaPalabras = new Array();
-//var texto;
-//var letrero;
 
 function mostrar() {
     if (valid) {
@@ -33,14 +31,14 @@ function mostrar() {
         textHTML += " <form id='miLista'>";
         for (i = 0; i < cantidad; i++) {
             textHTML += "<div><input type='text' name='palabra[]' id='palabra" + i + "'maxlength='10' class='palabra' data=" + i + ">";
-            textHTML += "<span id='aviso" + i + "' class='aviso' data="+i+"></span></div><br><br>";
+            textHTML += "<span id='aviso" + i + "' class='aviso' data="+i+"></span></div><br>";
         }
         textHTML += " </form>";
 
         document.getElementById("mostrar").innerHTML = textHTML;
         buttonHTML += "<input type='submit' onclick='validarSopa();validarRepeticiones();validarLetras();crearMatriz();' value='Crear'>";
         document.getElementById("generar").innerHTML = buttonHTML;
-        document.getElementById("checkbox").style.display = 'inline';
+        document.getElementById("checkbox").style.display = 'block';
 
         var form = $("#miLista");
         var t;
@@ -57,7 +55,6 @@ function mostrar() {
 }
 
 function vLetras() {
-    //var p='#palabra'+j;
     var tv = $(this).val();
     var letters = /^[A-Za-z]+$/;
     var data = $(this).attr("data");
@@ -68,12 +65,9 @@ function vLetras() {
         return true;
 
     } else {
-        //alert("palabra: "+j);
-        //  alert("error");
         $(this).addClass("error");
 
-        $("#aviso" + data).text("Sólo se pueden usar letras");
-        //   j=0;
+        $("#aviso" + data).text("Sólo usar letras");
         return false;
 
     }
@@ -85,13 +79,13 @@ function validar() {
     var y = document.forms["miFormulario"]["descripcion"].value;
 
     if (x == null || x == "") {
-        alert("Debe tener nombre");
+        //alert("Debe tener nombre");
         valid = false;
         return false;
     }
 
     if (y == null || y == "") {
-        alert("Debe tener descripción");
+        //alert("Debe tener descripción");
         valid = false;
         return false;
     }
@@ -142,7 +136,6 @@ function validarRepeticiones() {
                 repetidas = true;
                 return true;
             }
-
         }
     }
 }
@@ -151,10 +144,10 @@ function crearMatriz() {
     if (validSopa && !repetidas && validLetras) {
         var k = 0;
         var i = 0;
-        //obtener número de palabras
+        //Obtener número de palabras
         var n = $("#numero").val();
 
-        //leer palabras
+        //Leer palabras
         for (var con = 0; con < n; con++) {
             var idPal = '#palabra' + con;
             palabras[con] = $(idPal).val();
@@ -503,16 +496,6 @@ function verifica() {
     }
 
     if (palabras2.length === 0) {
-        /*$.bootstrapGrowl("GANASTE!!", {
-            ele: 'body', // which element to append to
-            type: 'danger', // (null, 'info', 'error', 'success')
-            offset: { from: 'top', amount: 20 }, // 'top', or 'bottom'
-            align: 'right', // ('left', 'right', or 'center')
-            width: 'auto', // (integer, or 'auto')
-            delay: 5000,
-            allow_dismiss: true,
-            stackup_spacing: 7 // spacing between consecutively stacked growls.
-        });*/
         window.location.href = "/ganaste";
     }
 
@@ -564,4 +547,10 @@ function contar(valor, id, contador) {
     } else {
         document.getElementById(id).value = cadena.substr(0, max);
     }
+}
+
+//Desactivar tecla enter en el form. Tomado de http://www.galisteocantero.com/como-desactivar-enter-en-formulario-html/
+function anular(e) {
+    tecla = (document.all) ? e.keyCode : e.which;
+    return (tecla != 13);
 }

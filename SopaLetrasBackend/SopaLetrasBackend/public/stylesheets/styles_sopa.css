@@ -57,9 +57,9 @@ and open the template in the editor.
     }
     
     #check{     
-        font-size:2em;
-        color:white;
-        background:#979003;
+        font-size: 1.7em;
+        color: white;
+        background: #979003;
         margin-left: 20px;
         text-align: center;
         padding-left: 5px;
@@ -174,9 +174,15 @@ and open the template in the editor.
     }
 
     #checkbox{
-        width: 20%;
-        margin: 0 20% 0 20%;
-        font-size:1em;
+        width: 80%;
+        margin: 0 5% 0 10%;
+        font-size: 1.1em;
+    }
+
+    .aviso{
+        font-weight: bold;
+        margin-left: 25%;
+        font-size: 0.9em;
     }
 }
 
@@ -194,7 +200,7 @@ and open the template in the editor.
     
     input[type="text"]{ 
         height: 40px; 
-        width: 38%;
+        width: 35%;
         border: 2px solid #aaa; 
         box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset; 
         border-radius: 5px; 
@@ -231,7 +237,7 @@ and open the template in the editor.
         margin-left: 20px;
         text-align: center;
         padding-left: 3px;
-        font-size: 1em; 
+        font-size: 0.9em; 
     }
    
     #sopa2{
@@ -351,9 +357,16 @@ and open the template in the editor.
 
     #checkbox{
         width: 20%;
-        margin: 9% 20% 9% 20%;
+        margin: 5% 10% 0 10%;
         font-size:1em;
     }
+
+    .aviso{
+        font-weight: bold;
+        margin-left:8%;
+        font-size: 0.9em;
+    }
+
 }
 
 @media (min-width :768px) and (max-width : 991px)   {    
@@ -533,8 +546,14 @@ and open the template in the editor.
 
     #checkbox{
         width: 20%;
-        margin: 9% 20% 9% 30%;
-        font-size:1.2em;
+        margin: 5% 10% 0 25%;
+        font-size: 1.1em;
+    }
+
+    .aviso{
+        font-weight: bold;
+        margin-left:3%;
+        font-size: 0.8em;
     }
 }
 
@@ -707,8 +726,14 @@ and open the template in the editor.
 
      #checkbox{
         width: 20%;
-        margin: 10% 0 10% 20%;
-        font-size:1.3em;
+        margin: 0 10% 0 10%;
+        font-size: 1.3em;
+     }
+
+     .aviso{
+        font-weight: bold;
+        margin-left: 35%;
+        font-size: 0.9em;
      }
 }
 
@@ -874,9 +899,23 @@ and open the template in the editor.
     }
 
     #checkbox{
-        width: 20%;
-        margin: 10% 2% 10% 25%;
+        width: 80%;
+        margin: 0 10% 0 10%;
         font-size:1.5em;
+    }
+
+    .aviso{
+        font-weight: bold;
+        margin-left:45%;
+    }
+        
+    #header{
+        font-weight: bold;
+        width: 25%;
+        font-size: 1.6em;
+        margin-right: 5%;
+        float: right;
+        font-weight: bold;    
     }
 }
 

@@ -3,19 +3,24 @@ html
   head    
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Sopa de Letras
+    title Ximena y Angie the best of the world
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')  
     
   body
-    #container1
+      #header
+        span.glyphicon.glyphicon-envelope
+        span#usuario XXXXXXXXXXXXXXXXXXXX
+      br
+      br
+      br
       h1 CREA TU SOPA
       br
       br
       #container
         .row
           .col-sm-9.col-md-9
-            form(name='miFormulario', method='POST', action='/sopa')
+            form(name='miFormulario', method='POST', action='/sopa', onkeypress='return anular(event)')
               label#titulolabel TÍTULO
               input#titulo(type='text' name='titulo', maxLength = '40', onKeyDown="contar(40, 'titulo','contador')" onKeyUp="contar(40, 'titulo', 'contador')" required="")
               input#contador(disabled='', size='2', value='40')
@@ -37,7 +42,6 @@ html
               .visible-lg.visible-sm.visible-xs
                 br          
               #mostrar   
-              br
               #checkbox
                 input(type='checkbox', name='condicion', value='si', checked='true') 
                 |    Acepto que mi sopa sea de uso público 
