@@ -30,7 +30,7 @@ function mostrar() {
 
         textHTML += " <form id='miLista'>";
         for (i = 0; i < cantidad; i++) {
-            textHTML += "<div><input type='text' name='palabra[]' id='palabra" + i + "'maxlength='10' class='palabra' data=" + i + ">";
+            textHTML += "<div><input type='text' name='palabras[]' id='palabra" + i + "'maxlength='10' class='palabra' data=" + i + ">";
             textHTML += "<span id='aviso" + i + "' class='aviso' data="+i+"></span></div><br>";
         }
         textHTML += " </form>";
@@ -59,18 +59,33 @@ function vLetras() {
     var letters = /^[A-Za-z]+$/;
     var data = $(this).attr("data");
 
-    if (tv.match(letters)) {
+    if (tv.match(letters) && tv.length >= 2 && tv.length < 10) {
         $(this).removeClass("error");
         $("#aviso" + data).text("");
         return true;
 
-    } else {
-        $(this).addClass("error");
-
-        $("#aviso" + data).text("Sólo usar letras");
-        return false;
-
     }
+    else {
+        if (!tv.match(letters)) {
+            $(this).addClass("error");
+            $("#aviso" + data).text("Sólo usar letras");
+            return false;
+        }
+
+        if (tv.length < 2) {
+            $(this).addClass("error");
+            $("#aviso" + data).text("Mínimo 2 caracteres");
+            return false;
+        }
+
+        /*if (tv.length > 10) {
+            $(this).addClass("error");
+            $("#aviso" + data).text("la palabra es muy larga");
+            return false;
+        }*/
+    }
+
+
 }
 
 function validar() {

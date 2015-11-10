@@ -187,8 +187,9 @@ and open the template in the editor.
 
     #header{
         width: 70%;
-        font-size: 1.1em;
-        padding: 2px;        
+        font-size: 1.2em;
+        padding: 2px; 
+        margin-top: 6%;       
     }
 }
 
@@ -362,9 +363,9 @@ and open the template in the editor.
     }
 
     #checkbox{
-        width: 20%;
+        width: 80%;
         margin: 5% 10% 0 10%;
-        font-size:1em;
+        font-size:1.2em;
     }
 
     .aviso{
@@ -374,7 +375,7 @@ and open the template in the editor.
     }
 
     #header{
-        width: 40%;
+        width: 50%;
         font-size: 1em;
         padding: 2px;     
         border: 4px solid black;
@@ -558,9 +559,9 @@ and open the template in the editor.
     }
 
     #checkbox {
-        width: 20%;
-        margin: 5% 10% 0 25%;
-        font-size: 1.1em;
+        width: 70%;
+        margin: 5% 10% 0 30%;
+        font-size: 1.3em;
     }
 
     .aviso {
@@ -747,14 +748,14 @@ and open the template in the editor.
      }
 
      #checkbox{
-        width: 20%;
+        width: 80%;
         margin: 0 10% 0 10%;
         font-size: 1.3em;
      }
 
      .aviso{
         font-weight: bold;
-        margin-left: 35%;
+        margin-left: 18%;
         font-size: 0.9em;
      }
 
@@ -937,7 +938,7 @@ and open the template in the editor.
 
     .aviso{
         font-weight: bold;
-        margin-left:45%;
+        margin-left: 18%;
     }
         
     #header{

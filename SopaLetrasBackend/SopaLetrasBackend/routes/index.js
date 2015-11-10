@@ -119,6 +119,7 @@ exports.login = function (req, res) {
                     res.redirect('back');
                    
                 } else {
+                    localStorage.setItem("0", "1");
                     //var conexion2 = connectionProvider.mySqlConnectionProvider.getSqlConnection();
                     //var sql = "SELECT * FROM puntajes WHERE id_usuario=" + conexion2.escape(result[0].id);
                     
