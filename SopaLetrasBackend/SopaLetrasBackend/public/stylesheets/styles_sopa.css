@@ -1042,3 +1042,9 @@ h4 {
 #u{
     margin-left: 5%;
 }
+
+
+#miFormulario input.error{
+    background: #f8dbdb;
+    background-color: #e77776;
+}

@@ -69,6 +69,8 @@ exports.guardarUsuario = function (req, res) {
                         }
                     });
 
+                    //Crear campo en puntajes con valor 0
+
                 } else {
                     //Devolvemos el resultado del query
                     console.log(result);
@@ -119,27 +121,29 @@ exports.login = function (req, res) {
                     res.redirect('back');
                    
                 } else {
-                    localStorage.setItem("0", "1");
-                    //var conexion2 = connectionProvider.mySqlConnectionProvider.getSqlConnection();
-                    //var sql = "SELECT * FROM puntajes WHERE id_usuario=" + conexion2.escape(result[0].id);
+                    var conexion2 = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+                    var sql = "SELECT * FROM puntajes WHERE id_usuario=" + conexion2.escape(result[0].id);
                     
-                    //if (conexion2) {
-                      //  conexion2.query(sql, function (error, result2) {
-                        //    if (error) {
-                          //      throw error;
-                            //}
-                            //else {
-                              //  console.log("Result query2", result2[0].puntos);
+                    if (conexion2) {
+                        conexion2.query(sql, function (error, result2) {
+                           if (error) {
+                              throw error;
+                           }
+                           else {
+                               console.log("Result query2", result2[0].puntos);
                                 //El usuario esta en result.Guardar usuario y puntaje en localStorage
-                                //var jugador = [result[0].nickname, result2[0].puntos];
-                                //localStorage.setItem("0", JSON.stringify(jugador));
-                                //localStorage.setItem("0", "hola");
-                                                             
+                                var jugador = [result[0].nickname, result2[0].puntos];
+                                localStorage.setItem('0', JSON.stringify(jugador));
+                                
+                                //Verificar que el valor fue guardado correctamente
+                                myValue = localStorage.getItem('0');
+                                console.log("usuario", myValue);
                                 //Pasar a la pagina de sopa
                                 res.redirect('/sopa');
-                            //}
-                        //});
-                    //}                    
+
+                            }
+                      });
+                  }                    
                 }
             }            
         });

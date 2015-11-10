@@ -6,8 +6,8 @@ html
     title Sopa de letras
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')  
-    
-  body
+        
+  body(onload='mostrarUsuario()')
      #container1
           #header
             span.glyphicon.glyphicon-user
@@ -21,16 +21,18 @@ html
           #container
             .row
               .col-sm-9.col-md-9
-                form(name='miFormulario', method='POST', action='/sopa', onkeypress='return anular(event)')
+                form#miFormulario(name='miFormulario', method='POST', action='/sopa', onkeypress='return anular(event)')
                   label#titulolabel TÍTULO
                   input#titulo(type='text' name='titulo', maxLength = '40', onKeyDown="contar(40, 'titulo','contador')" onKeyUp="contar(40, 'titulo', 'contador')" required="")
                   input#contador(disabled='', size='2', value='40')
+                  span#avisoT
                   br
                   br
                   br
                   label#descripcionlabel DESCRIPCIÓN
                   input#descripcion(type='text', , maxLength = '100', name='descripcion', onKeyDown="contar(100, 'descripcion','contador2')" onKeyUp="contar(100, 'descripcion', 'contador2')" required="")
                   input#contador2(disabled='', size='3', value='100')
+                  span#avisoD
                   br
                   br
                   br
@@ -89,4 +91,5 @@ html
     script(src='/javascripts/palabras.js')
     script(src='/javascripts/jquery.bootstrap-growl.min.js')
     script(src='/javascripts/easytimer.min.js')
+    script(src='/javascripts/store.min.js')
     

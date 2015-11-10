@@ -22,6 +22,47 @@ var repetidas = true;
 var validLetras = false;
 var listaPalabras = new Array();
 
+$(document).ready(function () {
+    var titulo;
+    var descripcion;
+
+    titulo = $("#titulo");
+    descripcion = $("#descripcion");
+    titulo.blur(vTitlulo);
+    descripcion.blur(vDescripcion);
+
+    function vTitlulo() {
+        var tl = $("#titulo").val();
+
+        if (tl === null || tl === "") {
+            $("#titulo").addClass("error");
+            $("#avisoT").text("Debe tener nombre");
+            return false;
+        } else {
+            $("#titulo").removeClass("error");
+            $("#avisoT").text("");
+            return true;
+
+        }
+    }
+
+    function vDescripcion() {
+        var ds = $("#descripcion").val();
+
+        if (ds === null || ds === "") {
+            $("#descripcion").addClass("error");
+            $("#avisoD").text("Debe tener descripción");
+            return false;
+        } else {
+            $("#descripcion").removeClass("error");
+            $("#avisoD").text("");
+            return true;
+
+        }
+    }
+
+});
+
 function mostrar() {
     if (valid) {
         var cantidad = parseInt(document.getElementById("numero").value);
@@ -408,6 +449,9 @@ function llenarLetrasAleatorias() {
 function seleccionarLetra(id) {
     var boton = document.getElementById(id);
 
+    if (letraID.length === 0)
+        cercanos.splice(0, cercanos.length);
+
     if (letraID[aux - 1] === id) {
         boton.style.backgroundColor = "LightBlue";
         aux--;
@@ -568,4 +612,16 @@ function contar(valor, id, contador) {
 function anular(e) {
     tecla = (document.all) ? e.keyCode : e.which;
     return (tecla != 13);
+}
+
+function mostrarUsuario() {
+    var id;
+    if (typeof (Storage) !== "undefined") {
+        // Retrieve
+        id = localStorage.getItem('0');
+    } else {
+        id = "Sorry, your browser does not support Web Storage...";
+    }
+    
+    alert(id);
 }
