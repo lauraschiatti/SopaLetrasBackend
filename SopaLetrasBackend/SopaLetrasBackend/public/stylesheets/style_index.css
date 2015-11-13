@@ -374,28 +374,11 @@ h2{
     margin-right: 9%;
 }
 
-/* ---- Boton de comenzar ------ */
-/* Tomado de http://bootsnipp.com/snippets/featured/circle-button-with-3d-shadow-and-hover-effect*/
-.orange-circle-button:hover {
-    color:#ffffff;
-    background-color: #e84d0e;
-    text-decoration: none;
-    border-color: #ff7536;
-	
-}
-.orange-circle-button:visited {
-    color:#ffffff;
-    background-color: #e84d0e;
-    text-decoration: none;
-	
-}
-/* ---- Boton de comenzar ------ */
-
 #iniciarsesionlabel, #registrarlabel{
     text-align: center;
 }
 
-/*Tomado de http://jsfiddle.net/Kx2k5/ */
+/*********Tomado de http://jsfiddle.net/Kx2k5/ **************/
 .item {    
     line-height: 50px;
     text-align: center;
@@ -444,6 +427,8 @@ h2{
     color: lightpink;
 }
 
+/***********************************/
+
 
 #iniciar, #crear, #registrarlabel,#iniciarsesionlabel{
     color: black;
@@ -472,7 +457,6 @@ h2 {
 #crear {
     margin-bottom: 40px;
 }
-
 
 .caracteres {
     margin-top: 10px; 

@@ -21,7 +21,9 @@ var validSopa = false;
 var repetidas = true;
 var validLetras = false;
 var listaPalabras = new Array();
+var palLista = new Array();
 
+//Validar titulo y descripcion
 $(document).ready(function () {
     var titulo;
     var descripcion;
@@ -207,10 +209,12 @@ function crearMatriz() {
         for (var con = 0; con < n; con++) {
             var idPal = '#palabra' + con;
             palabras[con] = $(idPal).val();
+            palLista[con] = $(idPal).val();
             if (k < palabras[con].length) {
                 k = palabras[con].length;
                 i = con;
             }
+            listaPalabras[con] = 0;
         }
 
         //determinar tamaño de la matriz
@@ -262,20 +266,31 @@ function mostrarTitulo() {
     document.getElementById("sopaD").innerHTML = descripcionHTML;
 }
 
+function cambiarLista(pal) {
+    for (var x = 0; x < palLista.length; x++) {
+        if (palLista[x] === pal) {
+            listaPalabras[x] = 1;
+        }
+        //alert("Probamos con "+listaPalabras[x]+" "+x+" longitud "+palLista.length+" nuevo");
+
+    }
+    // alert("volveremos a mostrar la lista2");
+    mostrarLista();
+}
+
 function mostrarLista() {
     var listaHTML = "";
-    for (var i = 0; i < palabras.length; i++) {
-        //  var p=palabra.toLowerCase();
-        //  alert("Probamos con la palabra"+p);
 
-        if (palabras[i].toUpperCase() === palabra) {
+    for (var x = 0; x < palLista.length; x++) {
+        if (listaPalabras[x] === 1) {
 
-            listaHTML += "<p><strike>" + palabras[i].toUpperCase() + "</strike></p>";
+            listaHTML += "<p><strike>" + palLista[x] + "</strike></p>";
 
-        } else {
-            listaHTML += "<p>" + palabras[i].toUpperCase() + "</p>";
+        } if (listaPalabras[x] === 0) {
+            listaHTML += "<p>" + palLista[x] + "</p>";
 
         }
+
     }
 
     document.getElementById("lista").innerHTML = listaHTML;
@@ -515,7 +530,7 @@ function verifica() {
     var boton;
     for (var j = 0; j < palabras2.length; j++) {
         if (palabras2[j].toUpperCase() === palabra) {
-            mostrarLista();
+            cambiarLista(palabras2[j]);
             encontro = 1;
             palabras2.splice(j, 1);
         }
@@ -615,13 +630,5 @@ function anular(e) {
 }
 
 function mostrarUsuario() {
-    var id;
-    if (typeof (Storage) !== "undefined") {
-        // Retrieve
-        id = localStorage.getItem('0');
-    } else {
-        id = "Sorry, your browser does not support Web Storage...";
-    }
-    
-    alert(id);
+    alert(localStorage.getItem('usuario'));   
 }

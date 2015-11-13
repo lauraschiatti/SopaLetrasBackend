@@ -133,11 +133,10 @@ exports.login = function (req, res) {
                                console.log("Result query2", result2[0].puntos);
                                 //El usuario esta en result.Guardar usuario y puntaje en localStorage
                                 var jugador = [result[0].nickname, result2[0].puntos];
-                                localStorage.setItem('0', JSON.stringify(jugador));
+                                localStorage.setItem('usuario', JSON.stringify(jugador));
                                 
-                                //Verificar que el valor fue guardado correctamente
-                                myValue = localStorage.getItem('0');
-                                console.log("usuario", myValue);
+                                console.log(localStorage.getItem('usuario'));
+                                
                                 //Pasar a la pagina de sopa
                                 res.redirect('/sopa');
 
