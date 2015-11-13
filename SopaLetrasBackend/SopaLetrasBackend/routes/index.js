@@ -132,14 +132,11 @@ exports.login = function (req, res) {
                            else {
                                console.log("Result query2", result2[0].puntos);
                                 //El usuario esta en result.Guardar usuario y puntaje en localStorage
-                                var jugador = [result[0].nickname, result2[0].puntos];
-                                localStorage.setItem('usuario', JSON.stringify(jugador));
-                                
-                                console.log(localStorage.getItem('usuario'));
-                                
+                              
                                 //Pasar a la pagina de sopa
+                                req.flash('nickname', result[0].nickname);
+                                req.flash('puntos', result2[0].puntos);
                                 res.redirect('/sopa');
-
                             }
                       });
                   }                    

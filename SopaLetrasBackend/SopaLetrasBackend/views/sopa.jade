@@ -11,7 +11,11 @@ html
      #container1
           #header
             span.glyphicon.glyphicon-user
-            span#u XXXXXXXXXXXXXXXXXXXX
+            - if (messages.nickname)        
+                span#u(style='font-weight:bold')=  messages.nickname
+
+            - if (messages.puntos)        
+                span#p(style='display:none')=  messages.puntos
           br
           br
           br

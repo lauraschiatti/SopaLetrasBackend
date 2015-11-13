@@ -630,5 +630,9 @@ function anular(e) {
 }
 
 function mostrarUsuario() {
-    alert(localStorage.getItem('usuario'));   
+    var nickname = document.getElementById("u").innerHTML;
+    var puntos = document.getElementById("p").innerHTML;
+
+    localStorage.setItem("usuario", nickname);
+    localStorage.setItem("puntos", puntos);
 }
