@@ -1,10 +1,4 @@
-﻿if (typeof (Storage) !== "undefined") {
-    //alert("Habilitado LocalStorage");
-} else {
-    alert("No habilitado LocalStorage");
-}
-
-var palabras = new Array();
+﻿var palabras = new Array();
 var palabras2 = new Array();
 var palabraVerifica = new Array();
 var letraID = new Array();
@@ -242,17 +236,24 @@ function crearMatriz() {
             var palabra = $.trim(palabras[j]);
             acomodarPalabra(palabra);
         }
-
-        $("#container1").hide();
-        $("#container2").show();
-        palabras2 = palabras;
-        llenarLetrasAleatorias();
-        mostrarTitulo();
-        mostrarLista();
-        mostrarTabla();
-        reloj();
     }
+    $("#container1").hide();
+
+    //Reemplazar puntos y nickname por valores de localStorage
+    document.getElementById("usuario").innerHTML = localStorage.getItem('usuario');
+    document.getElementById("u").innerHTML = localStorage.getItem('usuario');
+    document.getElementById("puntos").innerHTML = localStorage.getItem('puntos');
+            
+    $("#container2").show();
+
+    palabras2 = palabras;
+    llenarLetrasAleatorias();
+    mostrarTitulo();
+    mostrarLista();
+    mostrarTabla();
+    reloj();
 }
+
 
 function mostrarTitulo() {
     var t = $("#titulo").val();;
