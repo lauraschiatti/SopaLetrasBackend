@@ -1,0 +1,62 @@
+﻿doctype html
+html
+  head    
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Sopa de Letras
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_perfil.css')   
+    
+  body
+      #container1
+        .row
+           .col-sm-5.col-md-5
+                .row
+                   .col-sm-4.col-md-4
+                        img#perfil(src='/images/perfil.png', alt='sopa')               
+                   #datos_usuario.col-sm-8.col-md-8
+                        h3 Hola, nickname
+                        h4
+                          i.glyphicon.glyphicon-user
+                          |  Nombre
+                        h4
+                          i.glyphicon.glyphicon-link
+                          |  Correo
+                        br.hidden-xs 
+                        #boton
+                            button.btn.btn-labeled.btn-info(type='button', href='#')
+                              span.btn-label.glyphicon.glyphicon-pencil
+                                i
+                              |  Actualizar
+                br.visible-xs
+                .row#inferior
+                    .col-sm-1.col-md-1
+                    .col-sm-4.col-md-4.text-center#div_puntos
+                        h3 PUNTOS
+                        h4 2,784
+                    .col-sm-2.col-md-2
+                    .col-sm-4.col-md-4.text-center#div_sopas
+                        h3 SOPAS
+                        h4 4
+                    .col-sm-1.col-md-1
+           .col-sm-1.col-md-1.hidden-xs
+              #botones.btn-group-vertical
+                  button#boton_mis_sopas.btn(type='button') 
+                    i.glyphicon.glyphicon-th-list
+                  button#boton_sopas.btn(type='button') 
+                    i.glyphicon.glyphicon-th
+           br.visible-xs
+           br.visible-xs
+           .col-sm-1.col-md-1.visible-xs
+              #botones2.btn-group
+                  button#boton_mis_sopas2.btn(type='button') Mis sopas
+                  button#boton_sopas2.btn(type='button') Sopas
+                     
+            .col-sm-6.col-md-6
+                #mis_sopas
+
+                #sopas
+    
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src='/javascripts/bootstrap.js') 
+    script(src='/javascripts/perfil.js')     

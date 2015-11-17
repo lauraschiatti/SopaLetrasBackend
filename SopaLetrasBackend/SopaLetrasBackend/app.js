@@ -45,6 +45,7 @@ app.post('/sopa', routes.guardarSopa);
 
 app.get('/ganaste', routes.mostrarGanaste);
 app.get('/perdiste', routes.mostrarPerdiste);
+app.get('/usuarios/perfil', routes.mostrarPerfil);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

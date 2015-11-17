@@ -13,7 +13,11 @@ html
             span.glyphicon.glyphicon-user
             - if (messages.nickname)        
                 span#u(style='font-weight:bold')=  messages.nickname
-
+            - else 
+                script(type='text/javascript').
+                    document.getElementById("u").value = localStorage.getItem('nickname');
+                    $("#u").html(submitter_name);
+                
             - if (messages.puntos)        
                 span#p(style='display:none')=  messages.puntos
           br

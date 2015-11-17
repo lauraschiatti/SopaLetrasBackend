@@ -240,8 +240,7 @@ function crearMatriz() {
     $("#container1").hide();
 
     //Reemplazar puntos y nickname por valores de localStorage
-    document.getElementById("usuario").innerHTML = localStorage.getItem('usuario');
-    document.getElementById("u").innerHTML = localStorage.getItem('usuario');
+    document.getElementById("usuario").innerHTML = localStorage.getItem('nickname');
     document.getElementById("puntos").innerHTML = localStorage.getItem('puntos');
             
     $("#container2").show();
@@ -634,6 +633,6 @@ function mostrarUsuario() {
     var nickname = document.getElementById("u").innerHTML;
     var puntos = document.getElementById("p").innerHTML;
 
-    localStorage.setItem("usuario", nickname);
+    localStorage.setItem("nickname", nickname);
     localStorage.setItem("puntos", puntos);
 }

@@ -1,0 +1,471 @@
+﻿/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-sep-2015, 17:03:00
+    Author     : Laura Schiatti
+*/
+
+@import url(//fonts.googleapis.com/css?family=Inconsolata);
+    
+@media (max-width:459px) {
+    #container1{
+        padding: 5%;
+        text-align: center;
+        color: black;
+    }
+
+    #perfil {
+        width: 40%;
+        margin-top: 10%;
+        float: left
+    }
+
+    #inferior{
+        width: 80%;
+        margin: 0 10%;
+        height: 95px;
+    }
+
+    #inferior h3 {
+        font-size: 2em;
+    }
+
+    #inferior h4 {
+        font-size: 1.6em;
+    }
+
+    #datos_usuario {
+        padding: 4%;
+        font-size: 2em;
+        float: right;
+    }
+
+    #datos_usuario h3{
+        margin-bottom: 20px;
+        margin-top: 0;
+        font-size: 0.8em;
+    }
+
+    #datos_usuario h4{
+        font-size: 0.7em;
+    }
+
+    #boton button{
+        font-size: 0.5em;
+        margin-top: 20px;
+    }
+
+    #botones button {
+        width: 80px;   
+        height: 131px;
+    }
+
+    .col-md-1{
+        padding-left: 0;
+    }
+
+    #botones2{
+        margin: 3% 10%;       
+    }
+
+    #botones2 button {
+        width: 120px;   
+        height: 80px;
+        background-color: #979003;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    #div_puntos{
+        float:left;
+        color: red;
+    }
+
+    #div_sopas{
+        float:right;
+        color: red;
+    }
+
+    #boton_mis_sopas2{        
+        border: 3px solid #660066;
+    }
+
+    #boton_sopas2{
+        border-right: 3px solid #660066;
+        border-bottom: 3px solid #660066;
+        border-top: 3px solid #660066;
+    }
+}
+
+@media (min-width: 460px) and (max-width : 767px){    
+   #container1{
+        width: 90%;
+        margin: 5% 5%;
+        padding: 3% 12%;
+        border: 4px solid #660066;
+        text-align: center;
+        color: black;
+    }
+
+    #perfil {
+        width: 40%;
+        margin-top: 10%;
+        float: left
+    }
+
+    #inferior{
+        width: 80%;
+        margin: 0 10%;
+        height: 95px;
+    }
+
+    #inferior h3 {
+        font-size: 2em;
+    }
+
+    #inferior h4 {
+        font-size: 1.6em;
+    }
+
+    #datos_usuario {
+        padding: 4%;
+        font-size: 2em;
+        float: right;
+    }
+
+    #datos_usuario h3{
+        margin-bottom: 20px;
+        margin-top: 0;
+        font-size: 0.8em;
+    }
+
+    #datos_usuario h4{
+        font-size: 0.7em;
+    }
+
+    #boton button{
+        font-size: 0.5em;
+        margin-top: 20px;
+    }
+
+    #botones button {
+        width: 80px;   
+        height: 131px;
+    }
+
+    .col-md-1{
+        padding-left: 0;
+    }
+
+    #botones2{
+        margin: 3% 10%;       
+    }
+
+    #botones2 button {
+        width: 120px;   
+        height: 80px;
+        background-color: #979003;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    #div_puntos{
+        float:left;
+        color: red;
+    }
+
+    #div_sopas{
+        float:right;
+        color: red;
+    }
+
+    #boton_mis_sopas2{        
+        border: 3px solid #660066;
+    }
+
+    #boton_sopas2{
+        border-right: 3px solid #660066;
+        border-bottom: 3px solid #660066;
+        border-top: 3px solid #660066;
+    }
+}
+
+@media (min-width :768px) and (max-width : 991px) {
+   #container1{
+        width: 90%;
+        margin: 5%;
+        padding: 4%;
+        border: 4px solid #660066;
+    }
+
+    #perfil {
+        width: 90%;
+        margin-top: 70%;
+    }
+
+    #inferior{
+        background: #D891EF; 
+        height: 95px;
+        border: 4px solid #660066; 
+    }
+
+    #inferior h3 {
+        font-size: 1.6em;
+    }
+
+    #inferior h4 {
+        font-size: 1.4em;
+    }
+
+    #datos_usuario {
+        background: #9966CC;
+        padding: 4%;
+        font-size: 0.5em;
+        color: white;
+        border-top: 4px solid #660066;
+        border-right: 4px solid #660066;
+        border-left: 4px solid #660066;
+    }
+
+    #datos_usuario h3{
+        margin-bottom: 2px;
+        margin-top: 0;
+        font-size: 2.7em;
+    }
+
+    #datos_usuario h4{
+        font-size: 2.4em;
+    }
+
+    #boton button{
+        font-size: 1.8em;
+    }
+
+    #botones button {
+        width: 80px;   
+        height: 131px;
+        font-size: 2em;
+        background-color: #979003;
+    }
+
+    .col-md-1{
+        padding-left: 0;
+    }
+
+    #boton_mis_sopas{        
+        border-top: 3px solid #660066;
+        border-right: 3px solid #660066;
+        border-bottom: 3px solid #660066;
+        border-left: 1px solid #660066;
+    }
+
+    #boton_sopas{
+        border-right: 3px solid #660066;
+        border-bottom: 3px solid #660066;
+        border-left: 1px solid #660066;
+    }
+
+    #botones i{
+        margin-right: 6px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+   #container1{
+        width: 90%;
+        margin: 5%;
+        padding:4%;
+        border: 4px solid #660066;
+    }
+
+    #perfil {
+        width: 90%;
+        margin-top: 60%;
+    }
+
+    #inferior{
+        background: #D891EF;
+        border: 4px solid #660066;  
+    }
+
+    #inferior h3 {
+        font-size: 2em;
+    }
+
+    #inferior h4 {
+        font-size: 1.7em;
+    }
+
+    #datos_usuario {
+        background: #9966CC;
+        padding: 4%;
+        font-size: 1em;
+        color: white;
+        border-top: 4px solid #660066;
+        border-right: 4px solid #660066;
+        border-left: 4px solid #660066;
+    }
+
+    #datos_usuario h3 {
+        margin-bottom: 2px;
+        margin-top: 0;
+    }
+
+    #botones button {
+        width: 100px;   
+        height: 148px;
+        background-color: #979003;
+    }
+
+    .col-md-1{
+        padding-left: 0;
+    }
+
+    #boton_mis_sopas{        
+        border-top: 3px solid #660066;
+        border-right: 3px solid #660066;
+        border-bottom: 3px solid #660066;
+        border-left: 1px solid #660066;
+    }
+
+    #boton_sopas{
+        border-right: 3px solid #660066;
+        border-bottom: 3px solid #660066;
+        border-left: 1px solid #660066;
+    }
+
+    #botones i{
+        margin-right: 6px;
+    }
+
+    #inferior{
+        height: 105px;
+    }
+
+    #botones button{
+        font-size: 3em;
+    }
+}
+
+@media (min-width : 1200px) {
+    #container1{
+        width: 80%;
+        margin: 5% 10%;
+        padding: 3%;
+        border: 4px solid #660066;
+    }
+
+    #perfil {
+        width: 100%;
+        margin-top: 40%;
+    }
+
+    #inferior{
+        background: #D891EF; 
+        border: 4px solid #660066; 
+    }
+
+    #inferior h3 {
+        font-size: 2.4em;
+    }
+
+    #inferior h4 {
+        font-size: 2.2em;
+    }
+
+    #datos_usuario {
+        background: #9966CC;
+        padding: 4%;
+        font-size: 1em;
+        color: white;
+        border-top: 4px solid #660066;
+        border-right: 4px solid #660066;
+        border-left: 4px solid #660066;
+    }
+
+    #datos_usuario h3 {
+        margin-bottom: 2px;
+        margin-top: 0;
+    }
+
+    #botones button {
+        width: 100px;   
+        height: 158px;
+        background-color: #979003;
+    }
+
+    .col-md-1{
+        padding-left: 0;
+    }
+
+    #boton_mis_sopas{        
+        border-top: 3px solid #660066;
+        border-right: 3px solid #660066;
+        border-bottom: 3px solid #660066;
+        border-left: 1px solid #660066;
+    }
+
+    #boton_sopas{
+        border-right: 3px solid #660066;
+        border-bottom: 3px solid #660066;
+        border-left: 1px solid #660066;
+    }
+
+    #botones i{
+        margin-right: 6px;
+    }
+
+    #botones button{
+        font-size: 3em;
+    }
+}
+
+body{
+    padding-top: 2%;
+    background: url("../images/img01.jpg");
+    font-family: 'Inconsolata';
+}
+
+#container1, h3, h4, span, button{
+    font-family: 'Inconsolata';
+}
+
+h3{
+    font-weight: bold;
+}
+
+#inferior{
+    color:black;
+}
+
+#boton{
+    text-align:center;
+}
+
+#boton button{
+   font-weight:bold; 
+   color:black;
+}
+
+h4 i{
+   margin-left: 5px;
+}
+
+#botones button{
+    border-radius: 0;    
+    color: white;
+    padding: 25px;
+}
+
+#botones2 button{
+    border-radius: 0;    
+    color: black;
+    padding: 25px;
+}
+
+#datos_usuario h3 {
+    text-align: center;
+}

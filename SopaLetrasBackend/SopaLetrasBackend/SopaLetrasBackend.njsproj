@@ -33,22 +33,26 @@
     <Compile Include="app.js" />
     <Content Include="public\images\ganaste.gif" />
     <Content Include="public\images\perdiste.gif" />
+    <Content Include="public\images\perfil.png" />
     <Content Include="public\javascripts\jquery.bootstrap-growl.js" />
     <Content Include="public\javascripts\jquery.bootstrap-growl.min.js" />
     <Content Include="public\javascripts\easytimer.min.js" />
     <Content Include="public\javascripts\additional-methods.min.js" />
+    <Content Include="public\javascripts\perfil.js" />
     <Compile Include="routes\Conexion\mySqlConnectionProvider.js" />
     <Compile Include="routes\Conexion\mySqlConnectionString.js" />
     <Compile Include="routes\index.js" />
     <Content Include="public\images\img01.jpg" />
     <Content Include="public\images\sopa2.png" />
     <Content Include="public\javascripts\palabras.js" />
+    <Content Include="public\stylesheets\styles_perfil.css" />
     <Content Include="public\stylesheets\styles_sopa.css" />
     <Content Include="public\stylesheets\style_index.css" />
     <Content Include="views\ganaste.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\login.jade" />
     <Content Include="views\perdiste.jade" />
+    <Content Include="views\perfil.jade" />
     <Content Include="views\registrar.jade" />
     <Content Include="views\sopa.jade" />
   </ItemGroup>

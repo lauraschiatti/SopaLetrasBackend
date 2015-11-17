@@ -157,7 +157,7 @@ exports.mostrarSopa = function (req, res) {
 };
 
 /*
- * POST register user.
+ * POST sopa page.
  */
 
 exports.guardarSopa = function (req, res) {
@@ -246,4 +246,13 @@ exports.mostrarGanaste = function (req, res) {
 exports.mostrarPerdiste = function (req, res) {
     res.render('perdiste');
 };
+
+/*
+ * GET perfil.
+ */
+
+exports.mostrarPerfil = function (req, res) {
+    res.render('perfil');
+};
+
 
