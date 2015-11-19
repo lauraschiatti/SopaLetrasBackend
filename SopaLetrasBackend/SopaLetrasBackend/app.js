@@ -43,6 +43,8 @@ app.post('/usuarios/login', routes.login);
 app.get('/sopa', routes.mostrarSopa);
 app.post('/sopa', routes.guardarSopa);
 
+app.post('/palabras', routes.guardarPalabras);
+
 app.get('/ganaste', routes.mostrarGanaste);
 app.get('/perdiste', routes.mostrarPerdiste);
 app.get('/usuarios/perfil', routes.mostrarPerfil);

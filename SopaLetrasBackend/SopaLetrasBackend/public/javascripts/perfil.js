@@ -10,3 +10,7 @@ function contar(valor, id, contador) {
         document.getElementById(id).value = cadena.substr(0, max);
     }
 }
+
+function actualizarDatos() {
+
+}

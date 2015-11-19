@@ -12,12 +12,8 @@ html
           #header
             span.glyphicon.glyphicon-user
             - if (messages.nickname)        
-                span#u(style='font-weight:bold')=  messages.nickname
-            - else 
-                script(type='text/javascript').
-                    document.getElementById("u").value = localStorage.getItem('nickname');
-                    $("#u").html(submitter_name);
-                
+                a#u(href='/usuarios/perfil')=  messages.nickname
+
             - if (messages.puntos)        
                 span#p(style='display:none')=  messages.puntos
           br
@@ -51,15 +47,16 @@ html
                   br
                   br
                   .visible-lg.visible-sm.visible-xs
-                    br          
-                  #mostrar   
+                    br
+                form#guardapalabras(name='guardapalabras', method='POST', action='/palabras', onkeypress='return anular(event)')
+                  #mostrar
                   #checkbox
-                    input(type='checkbox', name='condicion', value='si', checked='true') 
-                    |    Acepto que mi sopa sea de uso público 
+                    input(type='checkbox', name='condicion', value='si', checked='true')
+                    |    Acepto que mi sopa sea de uso público
                   br
                   br
-                  br  
-                #generar
+                  br
+                  #generar
               .col-sm-3.col-md-3
                  img#sopa2(src='images/sopa2.png', alt='prueba')
     #container2(style='display:none')
