@@ -15,13 +15,13 @@ html
                    .col-sm-4.col-md-4
                         img#perfil(src='/images/perfil.png', alt='sopa')               
                    #datos_usuario.col-sm-8.col-md-8
-                        h3 Hola, nickname
+                        h3 Hola, #{nickname}
                         h4
                           i.glyphicon.glyphicon-user
-                          |  Nombre
+                          |  #{nombre}
                         h4
                           i.glyphicon.glyphicon-link
-                          |  Correo
+                          |  #{correo}
                         br.hidden-xs 
                         #boton
                             button.btn.btn-labeled.btn-info(type='button', onclick="actualizarDatos()")

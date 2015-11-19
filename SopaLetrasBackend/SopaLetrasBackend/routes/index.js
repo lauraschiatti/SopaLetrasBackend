@@ -63,6 +63,13 @@ exports.guardarUsuario = function (req, res) {
                             //Devolvemos la última id insertada
                             console.log("ultimo id insertado", result.insertId);
                             
+                            localStorage.setItem("nickname", nickname);
+                            localStorage.setItem("correo", email);
+                            localStorage.setItem("nombre", nombre);
+                            localStorage.setItem("sesion", result.insertId);
+                            //console.log(localStorage.getItem("sesion"));
+                            //console.log(localStorage.getItem("nombre"));
+
                             //Pasar a la pagina de sopa
                             res.redirect('/sopa');
                         }
@@ -128,14 +135,13 @@ exports.login = function (req, res) {
                             }
                             else {
                                 //console.log("Result query2", result2[0].puntos);
-                                //El usuario esta en result.Guardar usuario y puntaje en localStorage
-                                
-                                //Pasar a la pagina de sopa
-                                req.flash('nickname', result[0].nickname);
-                                //req.flash('puntos', result2[0].puntos);
                                 res.redirect('/sopa');
+                                localStorage.setItem("nickname", result[0].nickname);
+                                localStorage.setItem("correo", result[0].correo);
+                                localStorage.setItem("nombre", result[0].nombre);
                                 localStorage.setItem("sesion", result[0].id);
-                                //console.log(localStorage.getItem("sesion"));
+                                //console.log(localStorage.getItem("correo"));
+                                //console.log(localStorage.getItem("nombre"));
                             }
                         });
                     }
@@ -152,7 +158,11 @@ exports.login = function (req, res) {
  */
 
 exports.mostrarSopa = function (req, res) {
-    res.render('sopa');
+    var correo = localStorage.getItem("correo");
+    var nickname = localStorage.getItem("nickname");
+    var nombre = localStorage.getItem("nombre");
+   
+    res.render('sopa', {correo: correo, nickname: nickname, nombre: nombre});
 };
 
 /*
@@ -286,7 +296,11 @@ exports.mostrarPerdiste = function (req, res) {
  */
 
 exports.mostrarPerfil = function (req, res) {
-    res.render('perfil');
+    var correo = localStorage.getItem("correo");
+    var nickname = localStorage.getItem("nickname");
+    var nombre = localStorage.getItem("nombre");
+    
+    res.render('perfil', { correo: correo, nickname: nickname, nombre: nombre });
 };
 
 

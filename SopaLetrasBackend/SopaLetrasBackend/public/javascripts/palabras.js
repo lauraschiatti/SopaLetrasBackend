@@ -238,11 +238,6 @@ function crearMatriz() {
         }
     }
     $("#container1").hide();
-
-    //Reemplazar puntos y nickname por valores de localStorage
-    document.getElementById("usuario").innerHTML = localStorage.getItem('nickname');
-    document.getElementById("puntos").innerHTML = localStorage.getItem('puntos');
-            
     $("#container2").show();
 
     palabras2 = palabras;
@@ -629,10 +624,3 @@ function anular(e) {
     return (tecla != 13);
 }
 
-function mostrarUsuario() {
-    var nickname = document.getElementById("u").innerHTML;
-    var puntos = document.getElementById("p").innerHTML;
-
-    localStorage.setItem("nickname", nickname);
-    localStorage.setItem("puntos", puntos);
-}

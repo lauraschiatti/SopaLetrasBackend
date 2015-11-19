@@ -7,15 +7,12 @@ html
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')  
         
-  body(onload='mostrarUsuario()')
+  body
      #container1
           #header
-            span.glyphicon.glyphicon-user
-            - if (messages.nickname)        
-                a#u(href='/usuarios/perfil')=  messages.nickname
+            span.glyphicon.glyphicon-user     
+              a#u(href='/usuarios/perfil') #{nickname}
 
-            - if (messages.puntos)        
-                span#p(style='display:none')=  messages.puntos
           br
           br
           br
@@ -69,14 +66,14 @@ html
       #tablero.col-md-3.col-sm-3
         .row
           .col-md-4.col.sm-4
-              h4 Usuario:
+             h4 Usuario:
           .col-md-8.col.sm-8
-          h4#usuario Usuario
+             h4#usuario #{nickname} 
         .row
           .col-md-4.col.sm-4
-              h4 Puntos:
+             h4 Puntos:
           .col-md-8.col.sm-8
-          h4#puntos Puntos
+             h4#puntos 0
         br
         #countdownExample 
             .values
