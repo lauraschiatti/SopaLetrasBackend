@@ -50,7 +50,7 @@ and open the template in the editor.
     }
 
     #datos_usuario h4{
-        font-size: 0.7em;
+        font-size: 0.4em;
     }
 
     #boton button{
@@ -93,7 +93,7 @@ and open the template in the editor.
         border: 3px solid #660066;
     }
 
-    #boton_sopas2{
+    #boton_puntos2{
         border-right: 3px solid #660066;
         border-bottom: 3px solid #660066;
         border-top: 3px solid #660066;
@@ -143,7 +143,7 @@ and open the template in the editor.
     }
 
     #datos_usuario h4{
-        font-size: 0.7em;
+        font-size: 0.5em;
     }
 
     #boton button{
@@ -186,7 +186,7 @@ and open the template in the editor.
         border: 3px solid #660066;
     }
 
-    #boton_sopas2{
+    #boton_puntos2{
         border-right: 3px solid #660066;
         border-bottom: 3px solid #660066;
         border-top: 3px solid #660066;
@@ -237,7 +237,7 @@ and open the template in the editor.
     }
 
     #datos_usuario h4{
-        font-size: 2.4em;
+        font-size: 2.2em;
     }
 
     #boton button{
@@ -262,7 +262,7 @@ and open the template in the editor.
         border-left: 1px solid #660066;
     }
 
-    #boton_sopas{
+    #boton_puntos{
         border-right: 3px solid #660066;
         border-bottom: 3px solid #660066;
         border-left: 1px solid #660066;
@@ -331,7 +331,7 @@ and open the template in the editor.
         border-left: 1px solid #660066;
     }
 
-    #boton_sopas{
+    #boton_puntos{
         border-right: 3px solid #660066;
         border-bottom: 3px solid #660066;
         border-left: 1px solid #660066;
@@ -408,7 +408,7 @@ and open the template in the editor.
         border-left: 1px solid #660066;
     }
 
-    #boton_sopas{
+    #boton_puntos{
         border-right: 3px solid #660066;
         border-bottom: 3px solid #660066;
         border-left: 1px solid #660066;
@@ -466,6 +466,12 @@ h4 i{
     padding: 25px;
 }
 
-#datos_usuario h3 {
+#datos_usuario h3{
     text-align: center;
+    display: block;
+}
+
+#nickname_div{
+    display: block;
+    width: 70%;
 }

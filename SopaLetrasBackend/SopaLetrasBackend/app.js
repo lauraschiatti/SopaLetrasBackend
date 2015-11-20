@@ -49,6 +49,8 @@ app.get('/ganaste', routes.mostrarGanaste);
 app.get('/perdiste', routes.mostrarPerdiste);
 app.get('/usuarios/perfil', routes.mostrarPerfil);
 
+app.get('/sopa/compartir/:id', routes.dibujaSopa);
+
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });

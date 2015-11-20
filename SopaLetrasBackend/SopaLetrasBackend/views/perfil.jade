@@ -7,7 +7,7 @@ html
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/styles_perfil.css')   
     
-  body
+  body(onload="")
       #container1
         .row
            .col-sm-5.col-md-5
@@ -15,10 +15,11 @@ html
                    .col-sm-4.col-md-4
                         img#perfil(src='/images/perfil.png', alt='sopa')               
                    #datos_usuario.col-sm-8.col-md-8
-                        h3 Hola, #{nickname}
-                        h4
-                          i.glyphicon.glyphicon-user
-                          |  #{nombre}
+                        #nickname_div
+                            h3 Hola, #{nickname}
+                            h4
+                              i.glyphicon.glyphicon-user
+                              |  #{nombre}
                         h4
                           i.glyphicon.glyphicon-link
                           |  #{correo}
@@ -43,19 +44,20 @@ html
               #botones.btn-group-vertical
                   button#boton_mis_sopas.btn(type='button') 
                     i.glyphicon.glyphicon-th-list
-                  button#boton_sopas.btn(type='button') 
+                  button#boton_puntos.btn(type='button') 
                     i.glyphicon.glyphicon-th
            br.visible-xs
            br.visible-xs
            .col-sm-1.col-md-1.visible-xs
               #botones2.btn-group
                   button#boton_mis_sopas2.btn(type='button') Mis sopas
-                  button#boton_sopas2.btn(type='button') Sopas
+                  button#boton_puntos2.btn(type='button') Mis puntos
                      
             .col-sm-6.col-md-6
                 #mis_sopas
+                    a(href='/sopa/compartir/1') regístrate
 
-                #sopas
+                #mis_puntos
     
     script(src='/javascripts/jquery-1.10.2.js')
     script(src='/javascripts/bootstrap.js') 
