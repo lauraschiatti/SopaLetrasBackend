@@ -39,6 +39,8 @@
     <Content Include="public\javascripts\easytimer.min.js" />
     <Content Include="public\javascripts\additional-methods.min.js" />
     <Content Include="public\javascripts\perfil.js" />
+    <Content Include="public\javascripts\jquery.nicescroll.js" />
+    <Content Include="public\javascripts\jquery.nicescroll.min.js" />
     <Compile Include="routes\Conexion\mySqlConnectionProvider.js" />
     <Compile Include="routes\Conexion\mySqlConnectionString.js" />
     <Compile Include="routes\index.js" />

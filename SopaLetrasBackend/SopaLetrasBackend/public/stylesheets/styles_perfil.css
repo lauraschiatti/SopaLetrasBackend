@@ -111,7 +111,7 @@ and open the template in the editor.
     }
 
     #perfil {
-        width: 40%;
+        width: 25%;
         margin-top: 10%;
         float: left
     }
@@ -132,8 +132,10 @@ and open the template in the editor.
 
     #datos_usuario {
         padding: 4%;
+        width: 70%;
         font-size: 2em;
         float: right;
+        display: flex;
     }
 
     #datos_usuario h3{
@@ -143,7 +145,11 @@ and open the template in the editor.
     }
 
     #datos_usuario h4{
-        font-size: 0.5em;
+        font-size: 0.7em;
+    }
+
+    #datos_usuario h4 i{
+        text-align: left;
     }
 
     #boton button{
@@ -190,6 +196,17 @@ and open the template in the editor.
         border-right: 3px solid #660066;
         border-bottom: 3px solid #660066;
         border-top: 3px solid #660066;
+    }
+
+    /*mis sopas lista*/
+    #sopa {        
+        padding: 5px;
+        margin-bottom: 6px;
+        margin-left: 15px;
+    }
+
+    a{
+        font-size: 1.6em;        
     }
 }
 
@@ -271,6 +288,17 @@ and open the template in the editor.
     #botones i{
         margin-right: 6px;
     }
+
+    /*mis sopas lista*/
+    #sopa {        
+        padding: 5px;
+        margin-bottom: 6px;
+        margin-left: 15px;
+    }
+
+    a{
+        font-size: 1.6em;        
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199px){
@@ -348,6 +376,17 @@ and open the template in the editor.
     #botones button{
         font-size: 3em;
     }
+
+    /*mis sopas lista*/
+    #sopa {        
+        padding: 7px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+    }
+
+    a{
+        font-size: 1.8em;        
+    }
 }
 
 @media (min-width : 1200px) {
@@ -421,19 +460,30 @@ and open the template in the editor.
     #botones button{
         font-size: 3em;
     }
+
+    /*mis sopas lista*/
+    #sopa {        
+        padding: 8px;
+        margin-bottom: 5px;
+        margin-left: 15px;
+    }
+
+    a{
+        font-size: 2em;        
+    }   
 }
 
 body{
     padding-top: 2%;
     background: url("../images/img01.jpg");
-    font-family: 'Inconsolata';
+    font-family: 'Inconsolata';    
 }
 
 #container1, h3, h4, span, button{
     font-family: 'Inconsolata';
 }
 
-h3{
+h3 {
     font-weight: bold;
 }
 
@@ -474,4 +524,25 @@ h4 i{
 #nickname_div{
     display: block;
     width: 70%;
+}
+
+#sopa{
+    list-style-type: none;
+    background-color: brown;
+    color: white;
+    border: .2em solid chocolate;
+    display: block;
+    text-align: center;
+}
+
+.info h4{
+    font-weight: bold;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
 }

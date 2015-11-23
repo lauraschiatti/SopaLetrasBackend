@@ -5,9 +5,9 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Sopa de Letras
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_perfil.css')   
+    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_perfil.css') 
     
-  body(onload="")
+  body
       #container1
         .row
            .col-sm-5.col-md-5
@@ -16,7 +16,7 @@ html
                         img#perfil(src='/images/perfil.png', alt='sopa')               
                    #datos_usuario.col-sm-8.col-md-8
                         #nickname_div
-                            h3 Hola, #{nickname}
+                            h3 #{nickname}
                             h4
                               i.glyphicon.glyphicon-user
                               |  #{nombre}
@@ -55,10 +55,27 @@ html
                      
             .col-sm-6.col-md-6
                 #mis_sopas
-                    a(href='/sopa/compartir/1') regístrate
+                    - if(results == ""){
+                        
+                        #sopa(style="margin-top: 30px;")
+                           .info
+                                h3 NO TIENE SOPAS CREADAS
+                    - }else {
+                        - for(var i = 0, len = results.length; i < len; i++) {
+                            #sopa
+                                .info
+                                    h3= results[i].titulo.toUpperCase()
+                                    p= results[i].descripcion
 
+                                    a(href="#", style="margin-right: 20px;").glyphicon.glyphicon-play-circle
+                                    a(href="#").glyphicon.glyphicon-share-alt
+                            - }
+                    - }
                 #mis_puntos
     
     script(src='/javascripts/jquery-1.10.2.js')
+    script(src='/javascripts/jquery.nicescroll.min.js')
     script(src='/javascripts/bootstrap.js') 
-    script(src='/javascripts/perfil.js')     
+    script(src='/javascripts/perfil.js')
+        
+    

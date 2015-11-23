@@ -1,7 +1,6 @@
 ﻿var connectionProvider = require('./Conexion/mySqlConnectionProvider.js');
 var localStorage = require('localStorage');
 
-
 /*
  * GET home page.
  */
@@ -299,8 +298,25 @@ exports.mostrarPerfil = function (req, res) {
     var correo = localStorage.getItem("correo");
     var nickname = localStorage.getItem("nickname");
     var nombre = localStorage.getItem("nombre");
+    var id = localStorage.getItem("sesion");
     
-    res.render('perfil', { correo: correo, nickname: nickname, nombre: nombre });
+    var numeroSopas = 0;
+    var sopas = [];
+    
+    var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+       
+    var sql = "SELECT * FROM sopas WHERE id_usuario=" + conexion.escape(id);
+
+    conexion.query(sql, function (error, results) {
+        if (error) {
+            throw error;
+        }
+        else {
+            res.render('perfil', { correo: correo, nickname: nickname, nombre: nombre, results: results });
+        }
+    });
+    
+    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion); 
 };
 
 

@@ -19,24 +19,24 @@ block content
         .input-group
           span.input-group-addon
             span.glyphicon.glyphicon-envelope
-          input#name.form-control(type='text', maxLength= '40', name='name', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='' onKeyDown="contar(40, 'name', 'contador')" onKeyUp="contar(40, 'name', 'contador')" )
+          input#name.form-control(type='text', maxLength= '20', name='name', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='' onKeyDown="contar(20, 'name', 'contador')" onKeyUp="contar(20, 'name', 'contador')" )
         .caracteres
-           input#contador(disabled='', size='2', value='40')      
+           input#contador(disabled='', size='2', value='20')      
       .form-group
         label#nicknamelabel(for='nickname') Nombre de usuario
         .input-group
           span.input-group-addon
             span.glyphicon.glyphicon-user
-          input#nickname.form-control(type='text', , maxLength= '20' name='nickname', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='' onKeyDown="contar(20, 'nickname','contador2')" onKeyUp="contar(20, 'nickname', 'contador2')")
+          input#nickname.form-control(type='text', , maxLength= '10' name='nickname', pattern='[A-Za-z]{4,}+\d+[A-Za-z]{4,}', title='Nombre', required='' onKeyDown="contar(10, 'nickname','contador2')" onKeyUp="contar(10, 'nickname', 'contador2')")
         .caracteres
-           input#contador2(disabled='', size='2', value='20')    
+           input#contador2(disabled='', size='2', value='10')    
         label#emailabel(for='email') Correo electrónico
         .input-group
           span.input-group-addon
             span.glyphicon.glyphicon-envelope
-          input#correo.form-control(type='email', maxLength= '40', name="email" , pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Email', required='' onKeyDown="contar(40, 'correo', 'contador3')",  onKeyUp="contar(40, 'correo', 'contador3')" )
+          input#correo.form-control(type='email', maxLength= '30', name="email" , pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$', title='Email', required='' onKeyDown="contar(30, 'correo', 'contador3')",  onKeyUp="contar(30, 'correo', 'contador3')" )
         .caracteres
-           input#contador3(disabled='', size='2', value='40')   
+           input#contador3(disabled='', size='2', value='30')   
       .form-group
         label#passlabel(for='password') Contraseña
         .input-group
