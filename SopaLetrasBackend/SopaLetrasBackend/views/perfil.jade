@@ -10,19 +10,15 @@ html
   body
       #container1
         .row
-           .col-sm-5.col-md-5
+           .col-sm-6.col-md-6
                 .row
                    .col-sm-4.col-md-4
                         img#perfil(src='/images/perfil.png', alt='sopa')               
                    #datos_usuario.col-sm-8.col-md-8
                         #nickname_div
                             h3 #{nickname}
-                            h4
-                              i.glyphicon.glyphicon-user
-                              |  #{nombre}
-                        h4
-                          i.glyphicon.glyphicon-link
-                          |  #{correo}
+                            h4 #{nombre}
+                            h4 #{correo}
                         br.hidden-xs 
                         #boton
                             button.btn.btn-labeled.btn-info(type='button', onclick="actualizarDatos()")
@@ -38,22 +34,12 @@ html
                     .col-sm-2.col-md-2
                     .col-sm-4.col-md-4.text-center#div_sopas
                         h3 SOPAS
-                        h4 4
+                        h4= results.length
                     .col-sm-1.col-md-1
-           .col-sm-1.col-md-1.hidden-xs
-              #botones.btn-group-vertical
-                  button#boton_mis_sopas.btn(type='button') 
-                    i.glyphicon.glyphicon-th-list
-                  button#boton_puntos.btn(type='button') 
-                    i.glyphicon.glyphicon-th
            br.visible-xs
-           br.visible-xs
-           .col-sm-1.col-md-1.visible-xs
-              #botones2.btn-group
-                  button#boton_mis_sopas2.btn(type='button') Mis sopas
-                  button#boton_puntos2.btn(type='button') Mis puntos
-                     
-            .col-sm-6.col-md-6
+           br.visible-xs                     
+           .col-sm-6.col-md-6
+                h2 MIS SOPAS
                 #mis_sopas
                     - if(results == ""){
                         

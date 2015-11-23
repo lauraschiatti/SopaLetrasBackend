@@ -135,7 +135,6 @@ and open the template in the editor.
         width: 70%;
         font-size: 2em;
         float: right;
-        display: flex;
     }
 
     #datos_usuario h3{
@@ -146,10 +145,6 @@ and open the template in the editor.
 
     #datos_usuario h4{
         font-size: 0.7em;
-    }
-
-    #datos_usuario h4 i{
-        text-align: left;
     }
 
     #boton button{
@@ -425,11 +420,6 @@ and open the template in the editor.
         border-left: 4px solid #660066;
     }
 
-    #datos_usuario h3 {
-        margin-bottom: 2px;
-        margin-top: 0;
-    }
-
     #botones button {
         width: 100px;   
         height: 158px;
@@ -516,14 +506,8 @@ h4 i{
     padding: 25px;
 }
 
-#datos_usuario h3{
-    text-align: center;
-    display: block;
-}
-
-#nickname_div{
-    display: block;
-    width: 70%;
+#datos_usuario{
+    text-align:center;
 }
 
 #sopa{
@@ -533,6 +517,7 @@ h4 i{
     border: .2em solid chocolate;
     display: block;
     text-align: center;
+    overflow: hidden;
 }
 
 .info h4{
@@ -545,4 +530,10 @@ a{
 
 a:hover{
     text-decoration: none;
+}
+
+h2{
+   font-weight: bold; 
+   text-align:center;
+   font-family: 'Inconsolata'; 
 }
