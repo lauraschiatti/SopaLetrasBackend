@@ -1,0 +1,59 @@
+﻿doctype html
+html
+  head    
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Sopa de letras
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')  
+        
+  body
+    #container(style="font-size: 2em; text-align: center;")
+        h3(style="font-weight: bold;") Palabras de la sopa 
+        
+        - for(var i = 0, len = results.length; i < len; i++) {      
+             p(id=i)= results[i].palabra
+        - }    
+        input#numeroPalabras(value=i, style="display: none")=i  
+        button(onclick='guardarPalabras()')
+            | Jugar
+    #container2(style='display:none')
+      .col-md-8.col-sm-8
+         .row
+            h1#sopaT(style="font-size: 2em; font-weight: bold;") #{titulo}
+         .row
+            p#sopaD #{descripcion}
+      .col-md-1.col-sm-1  
+      #tablero.col-md-3.col-sm-3
+        .row
+          .col-md-4.col.sm-4
+             h5 Usuario:
+          .col-md-8.col.sm-8
+             h4#usuario #{nickname} 
+        .row
+          .col-md-4.col.sm-4
+             h5 Puntos:
+          .col-md-8.col.sm-8
+             h4#puntos 0
+        br
+        #countdownExample 
+            .values
+      .row
+        #table.col-md-9.col-sm-9        
+        #lista.col-md-2.col-sm-2
+      br
+      .row
+        .col-md-5
+        .col-md-2
+          button#verificar(onclick='verifica()')
+            span.glyphicon.glyphicon-check
+        .col-md-5
+    
+    script(src='/javascripts/jquery-1.10.2.min.js')   
+    script(src='/javascripts/bootstrap.js') 
+    script(src='/javascripts/store.min.js')      
+    script(src='/javascripts/palabras.js')
+    script(src='/javascripts/jquery.bootstrap-growl.min.js')
+    script(src='/javascripts/easytimer.min.js')
+    
+    

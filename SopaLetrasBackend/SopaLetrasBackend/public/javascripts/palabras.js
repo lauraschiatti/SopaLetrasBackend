@@ -16,6 +16,9 @@ var repetidas = true;
 var validLetras = false;
 var listaPalabras = new Array();
 var palLista = new Array();
+var puntos = 0;
+var creado = false;
+var palabraMax = "";
 
 //Validar titulo y descripcion
 $(document).ready(function () {
@@ -59,8 +62,10 @@ $(document).ready(function () {
 
 });
 
-function mostrar() {
-    if (valid) {
+function mostrar() {    
+    if (valid && !creado) {
+        creado = true;
+        document.getElementById("check").disabled = true;
         var cantidad = parseInt(document.getElementById("numero").value);
         var textHTML = "";
         var buttonHTML = "";
@@ -86,7 +91,7 @@ function mostrar() {
         l='.aviso';
         texto=$(t);
         letrero=$(l);
-        texto.blur(vLetras);
+        texto.blur(vLetras);        
     }
 }
 
@@ -247,7 +252,6 @@ function crearMatriz() {
     mostrarTabla();
     reloj();
 }
-
 
 function mostrarTitulo() {
     var t = $("#titulo").val();;
@@ -526,6 +530,7 @@ function verifica() {
     for (var j = 0; j < palabras2.length; j++) {
         if (palabras2[j].toUpperCase() === palabra) {
             cambiarLista(palabras2[j]);
+            actualizarPuntos();
             encontro = 1;
             palabras2.splice(j, 1);
         }
@@ -565,6 +570,7 @@ function verifica() {
     }
 
     if (palabras2.length === 0) {
+        almacenarPuntaje();
         window.location.href = "/ganaste";
     }
 
@@ -600,6 +606,7 @@ function reloj(){
     });
     timer.addEventListener('targetAchieved', function (e) {
         $('#countdownExample .values').html('¡Se acabó el tiempo!');
+        almacenarPuntaje();
         //Mostrar página de que perdist
         window.location.href = "/perdiste";
     });
@@ -624,3 +631,70 @@ function anular(e) {
     return (tecla != 13);
 }
 
+function actualizarPuntos() {
+    puntos = puntos + 100;
+    $("#puntos").html(puntos);
+}
+
+//Tomado de http://www.w3schools.com/html/html5_webstorage.asp
+function almacenarPuntaje() {
+    if (typeof (Storage) !== "undefined") {
+        localStorage.setItem("puntos", puntos);
+    }
+}
+
+function guardarPalabras() {
+    var palabrasCompartirSopa = new Array();
+    var numeroPalabras = parseInt(document.getElementById("numeroPalabras").value);
+
+    for (var i = 0; i < numeroPalabras; i++) {
+        palabrasCompartirSopa.push(document.getElementById(i).innerHTML);
+    }
+
+    //Dibujar sopa
+    mostrarCompartida(numeroPalabras, palabrasCompartirSopa);
+
+    $("#container").hide();
+    $("#container2").show();
+}
+
+function mostrarCompartida(n, pals) {
+    //Verificar palabra mas larga
+    var pl = 0;
+    for (var i = 0; i < n; i++) {
+        if (pals[i].length > pl) {
+            pl = pals[i].length;
+            palabraMax = pals[i];
+        }
+    }
+
+    //determinar tamaño de la matriz
+    max = 2 * pl;
+
+    if (max < 6){
+        max = 6;
+    }
+
+    //Crea arreglo 2D
+    matriz = new Array(max);
+    for (c = 0; c < max; c++) {
+        matriz[c] = new Array(max);
+    }
+
+    //Llenar matriz con 0
+    for (var i = 0; i < max; i++) {
+        for (var j = 0; j < max; j++) {
+            matriz[i][j] = 0;
+        }
+    }
+
+    //separar palabra en caracteres
+    for (var j = 0; j < palabras.length; j++) {
+        var palabra = $.trim(palabras[j]);
+        acomodarPalabra(palabra);
+    }
+
+    llenarLetrasAleatorias();
+    mostrarTabla();
+    reloj();
+}

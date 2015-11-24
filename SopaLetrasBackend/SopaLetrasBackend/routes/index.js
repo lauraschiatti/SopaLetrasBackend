@@ -286,7 +286,7 @@ exports.mostrarPerfil = function (req, res) {
     
     var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
        
-    var sql = "SELECT * FROM sopas WHERE id_usuario=" + conexion.escape(id) + "AND publica = 'si'";
+    var sql = "SELECT * FROM sopas WHERE id_usuario=" + conexion.escape(id);
 
     conexion.query(sql, function (error, results) {
         if (error) {
@@ -306,66 +306,33 @@ exports.mostrarPerfil = function (req, res) {
  */
 
 exports.dibujaSopa = function (req, res) {
-    console.log("id= " + req.param("id"));
-
-    var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+    //console.log("id= " + req.param("id"));
     
     var id_sopa = req.param("id");
-    console.log("Sopa con ID: "+id_sopa);
+        
+    var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
     
-    var sql = "SELECT COUNT(*) count FROM palabras WHERE id_sopa=" + id_sopa + ";";
-    var numeroPalabras;
+    var sql = "SELECT * FROM palabras WHERE id_sopa=" + conexion.escape(id_sopa);
     
-    conexion.query(sql, function (error, result) {
+    conexion.query(sql, function (error, results) {
         if (error) {
             throw error;
         }
         else {
-            numeroPalabras = result[0].count;
-            console.log("Esta sopa tiene: " + numeroPalabras + " palabras");
-            //localStorage.setItem("nPalCompartida", result[0].count);
-
+            var conexion2 = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+            var sql2 = "SELECT titulo, descripcion FROM sopas WHERE id=" + id_sopa + ";";
+            conexion2.query(sql2, function (error, result) {
+                if (error) {
+                    throw error;
+                }
+                else {
+                    titulo = result[0].titulo;
+                    descripcion = result[0].descripcion;
+                    res.render('sopaCompartida', { titulo: titulo, descripcion: descripcion, results: results });
+                }
+            });            
         }
     });
-    
-    sql = "SELECT titulo, descripcion FROM sopas WHERE id=" + id_sopa + ";";
-    var titulo, descripcion;
-    
-    conexion.query(sql, function (error, result) {
-        if (error) {
-            throw error;
-        }
-        else {
-            titulo = result[0].titulo;
-            descripcion = result[0].descripcion;
-            console.log("Titulo: " + titulo);
-            console.log("Descripcion: " + descripcion);
-            localStorage.setItem("titCompartida", result[0].titulo);
-            localStorage.setItem("desCompartida", result[0].descripcion);
-        }
-    });
-    
-    sql = "SELECT palabra FROM palabras WHERE id_sopa=" + id_sopa + ";";
-    
-    //var n = localStorage.getItem("nPalCompartida");
-    var i = 0;
-    //var n = 2;
-    
-    conexion.query(sql, function (error, result) {
-        if (error) {
-            throw error;
-        }
-        else {
-            while (i < numeroPalabras) {
-                localStorage.setItem("PalCompartida" + i, result[i].palabra);
-                console.log("Palabra " + i + ": " + result[i].palabra);
-                i++;
-            }
-        }
-    });
-    
-    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);
-    
 };
 
 
