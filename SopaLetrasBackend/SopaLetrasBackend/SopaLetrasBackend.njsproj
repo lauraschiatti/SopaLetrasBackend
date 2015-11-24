@@ -59,6 +59,7 @@
     <Content Include="views\registrar.jade" />
     <Content Include="views\sopa.jade" />
     <Content Include="views\sopaCompartida.jade" />
+    <Content Include="views\sopasPublicas.jade" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="public\images\img02.jpg" />

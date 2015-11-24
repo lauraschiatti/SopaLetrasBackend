@@ -49,6 +49,8 @@ app.get('/ganaste', routes.mostrarGanaste);
 app.get('/perdiste', routes.mostrarPerdiste);
 app.get('/usuarios/perfil', routes.mostrarPerfil);
 
+app.get('/sopas/ver', routes.verSopasPublicas);
+
 app.get('/sopa/compartir/:id', routes.dibujaSopa);
 
 http.createServer(app).listen(app.get('port'), function () {

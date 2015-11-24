@@ -335,3 +335,29 @@ exports.dibujaSopa = function (req, res) {
 };
 
 
+/*
+ * GET todas las sopas públicas.
+ */
+
+exports.verSopasPublicas = function (req, res) {
+    var nickname = localStorage.getItem("nickname");
+    var id = localStorage.getItem("sesion");
+    
+    var numeroSopas = 0;
+    var sopas = [];
+    
+    var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+    
+    var sql = "SELECT * FROM sopas WHERE id_usuario=" + conexion.escape(id) + "AND publica = 'si'";
+    
+    conexion.query(sql, function (error, results) {
+        if (error) {
+            throw error;
+        }
+        else {
+            res.render('sopasPublicas', { nickname: nickname, results: results });
+        }
+    });
+    
+    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);
+};

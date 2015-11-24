@@ -1,0 +1,39 @@
+﻿doctype html
+html
+  head    
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Sopa de Letras
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/styles_perfil.css') 
+    
+  body
+      #container1
+        h3 hola, #{nickname}
+        h2 TODAS LAS SOPAS
+        #mis_sopas
+            - if(results == ""){                        
+                #sopa(style="margin-top: 30px;")
+                    .info
+                        h3 NO HAY SOPAS PÚBLICAS CREADAS
+            - }else {
+                - for(var i = 0, len = results.length; i < len; i++) {
+                    #sopa
+                        .info
+                            h3= results[i].titulo.toUpperCase()
+                            p= results[i].descripcion
+
+                            a(href="#").glyphicon.glyphicon-share-alt
+                    - }
+            - }
+            br
+            br
+            br
+            a.btn.btn-labeled.btn-success.btn-lg(href="/usuarios/perfil", style="color: black; font-weight: bold; width: 20%; margin-left: 40%; margin-right: 40%;")  Atrás
+    
+    script(src='/javascripts/jquery-1.10.2.js')
+    script(src='/javascripts/jquery.nicescroll.min.js')
+    script(src='/javascripts/bootstrap.js') 
+    script(src='/javascripts/perfil.js')
+        
+    
