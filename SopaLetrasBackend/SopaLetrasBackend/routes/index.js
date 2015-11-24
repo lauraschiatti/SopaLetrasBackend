@@ -389,3 +389,44 @@ exports.verSopasPublicas = function (req, res) {
     
     connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);
 };
+
+/*
+ * GET draw sopa.
+ */
+
+exports.guardarPuntaje = function (req, res) {
+    var puntos = req.param("puntos");
+    /*var usuario = localStorage.getItem("sesion");
+    console.log("puntos= " + puntos);
+
+    var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+    var sql = "INSERT INTO puntajes SET ?";
+    
+    //creamos un objeto con los datos a insertar del usuario
+    var usuario = {
+        id : null,
+        id_usuario : usuario,
+        puntos : puntos
+    };
+    
+    conexion.query(sql, usuario, function (error, result) {
+        if (error) {
+            throw error;
+        }
+        else {
+            //Devolvemos la última id insertada
+            console.log("ultimo id insertado en puntajes", result.insertId);
+        }
+    });
+                   
+    var sql = "SELECT * FROM puntajes WHERE id_usuario=" + conexion.escape(usuario);
+    
+    conexion.query(sql, function (error, results) {
+        if (error) {
+            throw error;
+        }
+        else {
+           res.render('puntajes', { results: results });
+        }
+    });*/
+};

@@ -8,6 +8,8 @@ and open the template in the editor.
     Author     : Laura Schiatti
 */
 
+@font-face { font-family: Inconsolata; src: url('/fonts/Inconsolata.ttf'); }
+
 @media (max-width:575px) {
     h1{
         padding-top: 15%;

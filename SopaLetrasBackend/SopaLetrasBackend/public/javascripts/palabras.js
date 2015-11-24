@@ -571,6 +571,7 @@ function verifica() {
 
     if (palabras2.length === 0) {
         almacenarPuntaje();
+        
         window.location.href = "/ganaste";
     }
 
@@ -638,4 +639,13 @@ function actualizarPuntos() {
 
 function almacenarPuntaje() {
     localStorage.setItem("puntos", puntos);
+}
+
+function mostrarPuntaje() {
+    document.getElementById("puntos_final").innerHTML = localStorage.getItem("puntos");
+}
+
+function guardarPuntaje() {
+    var puntaje = localStorage.getItem("puntos");
+    window.location.href = "/usuario/puntaje/:" + puntaje;
 }

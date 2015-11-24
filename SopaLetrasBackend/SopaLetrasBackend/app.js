@@ -52,6 +52,7 @@ app.get('/usuarios/perfil', routes.mostrarPerfil);
 app.get('/sopas/ver', routes.verSopasPublicas);
 
 app.get('/sopa/compartir/:id', routes.dibujaSopa);
+app.post('/usuario/puntaje/:puntos', routes.guardarPuntaje);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

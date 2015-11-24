@@ -7,7 +7,7 @@ html
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')   
 
-  body
+  body(onload="mostrarPuntaje();")
     br
     br
     br
@@ -17,8 +17,23 @@ html
           img#gif(src='images/ganaste.gif', alt='ganaste')
           br
           br
-          a#mensaje(href='/') ¿Quiéres seguir jugando?
+          br
+          p(style="font-weight:bold; text-align:center; color: black;") Puntos
+          p#puntos_final
+          br
+          br
+          a#mensaje(href="#" onclick="guardarPuntaje();") Continuar
+
+          $.ajax({
+              type: "POST",
+              url: "/usuario/puntaje",
+              data: JSON.stringify({ name: name, fact: fact }),
+              contentType: "application/json; charset=utf-8",
+              dataType: "json",
+              ...
+          });
     
     script(src='/javascripts/jquery-1.10.2.js')
-    script(src='/javascripts/bootstrap.js')      
+    script(src='/javascripts/bootstrap.js')   
+    script(src='/javascripts/palabras.js')         
 

@@ -7,7 +7,7 @@ html
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/styles_sopa.css')   
 
-  body
+  body(onload="mostrarPuntaje();")
      br
      br
      br
@@ -19,8 +19,14 @@ html
             img#gif(src='images/perdiste.gif', alt='perdiste')
             br
             br
-            a#mensaje(href='/') ¿Quiéres seguir jugando?
+            br
+            p(style="font-weight:bold; text-align:center; color: black;") Puntos
+            p#puntos_final
+            br
+            br
+            a#mensaje(href='/usuario/puntaje.htm?puntos=texto', target='_blank') Continuar
     
     script(src='/javascripts/jquery-1.10.2.js')
-    script(src='/javascripts/bootstrap.js')      
+    script(src='/javascripts/bootstrap.js')   
+    script(src='/javascripts/palabras.js')    
 

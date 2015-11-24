@@ -25,6 +25,11 @@ html
                               span.btn-label.glyphicon.glyphicon-pencil
                                 i
                               |  Actualizar
+
+                            button.btn.btn-labeled.btn-danger(type='button', onclick="cerrarSesion()")
+                              span.btn-label.glyphicon.glyphicon-pencil   
+                                i                                                         
+                              |  Cerrar sesión
                 br.visible-xs
                 .row#inferior
                     .col-sm-1.col-md-1
@@ -53,7 +58,6 @@ html
                                     h3= results[i].titulo.toUpperCase()
                                     p= results[i].descripcion
 
-                                    a(href="#", style="margin-right: 20px;").glyphicon.glyphicon-play-circle
                                     a(href="#").glyphicon.glyphicon-share-alt
                             - }
                     - }
@@ -61,5 +65,7 @@ html
     script(src='/javascripts/jquery-1.10.2.js')
     script(src='/javascripts/jquery.nicescroll.min.js')
     script(src='/javascripts/bootstrap.js') 
+    script(src='/javascripts/perfil.js') 
+
         
     

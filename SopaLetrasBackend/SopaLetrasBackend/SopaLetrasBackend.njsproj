@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Content Include="public\fonts\Inconsolata-Regular.ttf" />
     <Content Include="public\images\ganaste.gif" />
     <Content Include="public\images\perdiste.gif" />
     <Content Include="public\images\perfil.png" />
@@ -42,6 +43,7 @@
     <Content Include="public\javascripts\jquery.nicescroll.min.js" />
     <Content Include="public\javascripts\compartirSopa.js" />
     <Content Include="public\javascripts\palabras.js" />
+    <Content Include="public\javascripts\perfil.js" />
     <Compile Include="routes\Conexion\mySqlConnectionProvider.js" />
     <Compile Include="routes\Conexion\mySqlConnectionString.js" />
     <Compile Include="routes\index.js" />
@@ -55,6 +57,7 @@
     <Content Include="views\login.jade" />
     <Content Include="views\perdiste.jade" />
     <Content Include="views\perfil.jade" />
+    <Content Include="views\puntajes.jade" />
     <Content Include="views\registrar.jade" />
     <Content Include="views\sopa.jade" />
     <Content Include="views\sopaCompartida.jade" />
