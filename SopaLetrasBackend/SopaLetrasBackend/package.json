@@ -8,9 +8,9 @@
     "email": ""
   },
   "dependencies": {
-    "express": "3.4.4",
-    "jade": "*",
-    "mongoose": "^4.1.11",
+    "express": "^3.4.4",
+    "jade": "^1.11.0",
+    "mongoose": "^4.2.7",
     "mysql": "^2.9.0",
     "stylus": "*",
     "underscore": "^1.8.3"
