@@ -208,8 +208,7 @@ exports.guardarSopa = function (req, res) {
         }
     });
     
-    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);   
-    
+    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);       
 };
 
 /*

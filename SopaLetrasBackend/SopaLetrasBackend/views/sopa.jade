@@ -22,37 +22,34 @@ html
           #container
             .row
               .col-sm-9.col-md-9
-                form#miFormulario(name='miFormulario', method='POST', action='/sopa', onkeypress='return anular(event)')
-                  label#titulolabel TÍTULO
-                  input#titulo(type='text' name='titulo', maxLength = '40', onKeyDown="contar(40, 'titulo','contador')" onKeyUp="contar(40, 'titulo', 'contador')" required="")
-                  input#contador(disabled='', size='2', value='40')
-                  span#avisoT
-                  br
-                  br
-                  br
-                  label#descripcionlabel DESCRIPCIÓN
-                  input#descripcion(type='text', , maxLength = '100', name='descripcion', onKeyDown="contar(100, 'descripcion','contador2')" onKeyUp="contar(100, 'descripcion', 'contador2')" required="")
-                  input#contador2(disabled='', size='3', value='100')
-                  span#avisoD
-                  br
-                  br
-                  #checkbox
+                form#guardapalabras(name='miFormulario', method='POST', action='/sopa')
+                   label#titulolabel TÍTULO
+                   input#titulo(type='text', name='titulo', maxLength = '40',required="")
+                   span#avisoT
+                   br
+                   br
+                   br
+                   label#titulolabel DESCRIPCIÓN
+                   input#titulo(type='text', name='descripcion', maxLength = '100',required="")
+                   span#avisoD
+                   br
+                   br
+                   #checkbox
                     input(type='radio', name='condicion', value='si', checked)
                     |   Acepto que mi sopa sea de uso público
                     br
                     input(type='radio', name='condicion', value='no')
                     |   No deseo que mi sopa sea de uso público
-                  br
-                  br
-                  br
-                  label#numerolabel NÚMERO DE PALABRAS
-                  input#numero(type='number', name='numero', min='1', max='15', value='1', required='', onkeyup="if(this.value>15){this.value='15';}else if(this.value<1){this.value='1';}")
-                  button#check(onclick='validar(); mostrar();')
-                    i.glyphicon.glyphicon-check                
-                  br
-                  br
-                  .visible-lg.visible-sm.visible-xs
                     br
+                   br
+                   br
+                   label#numerolabel NÚMERO DE PALABRAS
+                   input#numero(type='number', name='numero', min='1', max='15', value='1', required='', onkeyup="if(this.value>15){this.value='15';}else if(this.value<1){this.value='1';}")
+
+                   button#check(onclick='mostrar()')
+                     i.glyphicon.glyphicon-check                
+                   br
+                   br
                 form#guardapalabras(name='guardapalabras', method='POST', action='/palabras', onkeypress='return anular(event)')
                   #mostrar                  
                   br
@@ -93,9 +90,9 @@ html
             span.glyphicon.glyphicon-check
         .col-md-5
     
-    script(src='/javascripts/jquery-1.10.2.min.js')   
-    script(src='/javascripts/bootstrap.js')      
+    script(src='/javascripts/jquery-1.10.2.min.js')       
     script(src='/javascripts/palabras.js')
+    script(src='/javascripts/bootstrap.js')  
     script(src='/javascripts/jquery.bootstrap-growl.min.js')
     script(src='/javascripts/easytimer.min.js')
     

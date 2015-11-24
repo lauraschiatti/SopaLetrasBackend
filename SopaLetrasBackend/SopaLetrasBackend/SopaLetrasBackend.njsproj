@@ -41,12 +41,13 @@
     <Content Include="public\javascripts\perfil.js" />
     <Content Include="public\javascripts\jquery.nicescroll.js" />
     <Content Include="public\javascripts\jquery.nicescroll.min.js" />
+    <Content Include="public\javascripts\compartirSopa.js" />
+    <Content Include="public\javascripts\palabras.js" />
     <Compile Include="routes\Conexion\mySqlConnectionProvider.js" />
     <Compile Include="routes\Conexion\mySqlConnectionString.js" />
     <Compile Include="routes\index.js" />
     <Content Include="public\images\img01.jpg" />
     <Content Include="public\images\sopa2.png" />
-    <Content Include="public\javascripts\palabras.js" />
     <Content Include="public\stylesheets\styles_perfil.css" />
     <Content Include="public\stylesheets\styles_sopa.css" />
     <Content Include="public\stylesheets\style_index.css" />
