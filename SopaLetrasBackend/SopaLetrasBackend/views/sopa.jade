@@ -36,6 +36,14 @@ html
                   span#avisoD
                   br
                   br
+                  #checkbox
+                    input(type='radio', name='condicion', value='si', checked)
+                    |   Acepto que mi sopa sea de uso público
+                    br
+                    input(type='radio', name='condicion', value='no')
+                    |   No deseo que mi sopa sea de uso público
+                  br
+                  br
                   br
                   label#numerolabel NÚMERO DE PALABRAS
                   input#numero(type='number', name='numero', min='1', max='15', value='1', required='', onkeyup="if(this.value>15){this.value='15';}else if(this.value<1){this.value='1';}")
@@ -46,10 +54,7 @@ html
                   .visible-lg.visible-sm.visible-xs
                     br
                 form#guardapalabras(name='guardapalabras', method='POST', action='/palabras', onkeypress='return anular(event)')
-                  #mostrar
-                  #checkbox
-                    input(type='checkbox', name='condicion', value='si', checked='true')
-                    |    Acepto que mi sopa sea de uso público
+                  #mostrar                  
                   br
                   br
                   br

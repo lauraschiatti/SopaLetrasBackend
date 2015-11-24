@@ -75,7 +75,6 @@ function mostrar() {
         document.getElementById("mostrar").innerHTML = textHTML;
         buttonHTML += "<input type='submit' onclick='validarSopa();validarRepeticiones();validarLetras();crearMatriz();' value='Crear'>";
         document.getElementById("generar").innerHTML = buttonHTML;
-        document.getElementById("checkbox").style.display = 'block';
 
         var form = $("#miLista");
         var t;
@@ -143,6 +142,7 @@ function validar() {
     }
 }
 
+//Tomado de http://www.w3resource.com/javascript/form/all-letters-field.php
 function validarLetras(){
     validLetras=true;
     var cantidad = parseInt(document.getElementById("numero").value);

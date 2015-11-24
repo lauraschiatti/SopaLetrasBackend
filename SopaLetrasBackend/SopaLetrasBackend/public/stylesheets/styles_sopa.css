@@ -1022,7 +1022,7 @@ h5 {
 }
 
 #checkbox{
-    display: none;
+    display: block;
     color: black;
     text-align: center;
 }
