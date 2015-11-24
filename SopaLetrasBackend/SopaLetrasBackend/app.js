@@ -40,6 +40,8 @@ app.post('/usuarios/registrar', routes.guardarUsuario);
 app.get('/usuarios/login', routes.mostrarLogin);
 app.post('/usuarios/login', routes.login);
 
+app.post('/usuarios/actualizar', routes.actualizarDatos);
+
 app.get('/sopa', routes.mostrarSopa);
 app.post('/sopa', routes.guardarSopa);
 

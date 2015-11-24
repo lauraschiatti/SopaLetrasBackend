@@ -22,16 +22,8 @@ html
           p#puntos_final
           br
           br
-          a#mensaje(href="#" onclick="guardarPuntaje();") Continuar
+          a#mensaje(href="/usuarios/perfil") Continuar
 
-          $.ajax({
-              type: "POST",
-              url: "/usuario/puntaje",
-              data: JSON.stringify({ name: name, fact: fact }),
-              contentType: "application/json; charset=utf-8",
-              dataType: "json",
-              ...
-          });
     
     script(src='/javascripts/jquery-1.10.2.js')
     script(src='/javascripts/bootstrap.js')   

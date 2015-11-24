@@ -2,7 +2,3 @@
     localStorage.clear();
     window.location.href = "/";
 }
-
-function actualizarDatos() {
-
-}

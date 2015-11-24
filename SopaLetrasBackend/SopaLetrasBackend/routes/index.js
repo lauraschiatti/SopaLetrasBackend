@@ -430,3 +430,34 @@ exports.guardarPuntaje = function (req, res) {
         }
     });*/
 };
+
+/*
+ * POST actualizar usuario.
+ */
+
+exports.actualizarDatos = function (req, res) {
+    console.log("Entro a actualizarDatos", req.body);
+    
+    var nombre = req.body.name;
+    var nickname = req.body.nickname;
+    var contrasena = req.body.password;
+    var correo = localStorage.getItem("correo");
+    var id = localStorage.getItem("sesion");
+
+    var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+    var sql = "UPDATE usuarios SET nickname=" + conexion.escape(nickname) + ", nombre=" + conexion.escape(nombre) + ", contraseña=" + conexion.escape(contrasena) + "WHERE id=" + conexion.escape(id);
+          
+    conexion.query(sql, function (error, result) {
+        if (error) {
+            throw error;
+        }
+        else {
+            localStorage.setItem("nickname", nickname);
+            localStorage.setItem("nombre", nombre);
+            res.redirect('/usuarios/perfil');
+        }
+    });
+    
+    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);
+    
+};
