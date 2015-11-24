@@ -174,17 +174,16 @@ exports.guardarSopa = function (req, res) {
     var titulo = req.body.titulo;
     var descripcion = req.body.descripcion;
     var numeroPalabras = parseInt(req.body.numero);
+    var usuario = localStorage.getItem("sesion");
+    localStorage.setItem("NumPalabras", numeroPalabras);
     var condicion = req.body.condicion;
-
+    
     var publica;
     if (condicion == "si") {
         publica = 'si';
     } else {
         publica = 'no';
     }
-
-    var usuario = localStorage.getItem("sesion");
-    localStorage.setItem("NumPalabras", numeroPalabras);
     
     var conexion = connectionProvider.mySqlConnectionProvider.getSqlConnection();
     var sql = "INSERT INTO sopas SET ?";
@@ -193,8 +192,7 @@ exports.guardarSopa = function (req, res) {
         id : null,
         titulo : titulo,
         descripcion : descripcion,
-        id_usuario : usuario,
-        publica : publica
+        id_usuario : usuario
     };
     
     conexion.query(sql, sopa, function (error, result) {
@@ -208,7 +206,37 @@ exports.guardarSopa = function (req, res) {
         }
     });
     
-    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);       
+    connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion);
+    
+    /*var i = 0;
+    while (i < numeroPalabras) { 
+        var conexion2 = connectionProvider.mySqlConnectionProvider.getSqlConnection();
+        var sql = "INSERT INTO palabras SET ?";
+        
+        var palabra = {
+            id : null,
+            id_sopa : id_sopa,
+            palabra : palabras[i]
+        };
+        
+        conexion2.query(sql, palabra, function (error, result) {
+            if (error) {
+                throw error;
+            }
+            else {
+            }
+        });
+        connectionProvider.mySqlConnectionProvider.closeSqlConnection(conexion2);
+
+        i++;
+    }
+
+    var i = 0;
+    while (i < numeroPalabras) {
+        console.log("palabras[", i, "] = ", palabras[i]);
+        i++;
+    }  */
+    
 };
 
 /*

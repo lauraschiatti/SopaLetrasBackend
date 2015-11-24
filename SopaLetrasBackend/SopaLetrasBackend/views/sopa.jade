@@ -29,8 +29,8 @@ html
                    br
                    br
                    br
-                   label#titulolabel DESCRIPCIÓN
-                   input#titulo(type='text', name='descripcion', maxLength = '100',required="")
+                   label#descripcionlabel DESCRIPCIÓN
+                   input#descripcion(type='text', name='descripcion', maxLength = '100',required="")
                    span#avisoD
                    br
                    br
@@ -46,7 +46,7 @@ html
                    label#numerolabel NÚMERO DE PALABRAS
                    input#numero(type='number', name='numero', min='1', max='15', value='1', required='', onkeyup="if(this.value>15){this.value='15';}else if(this.value<1){this.value='1';}")
 
-                   button#check(onclick='validar(); mostrar();')
+                   button#check(onclick="validar(); mostrar();")
                      i.glyphicon.glyphicon-check                
                    br
                    br
@@ -91,9 +91,9 @@ html
         .col-md-5
     
     script(src='/javascripts/jquery-1.10.2.min.js')       
-    script(src='/javascripts/palabras.js')       
     script(src='/javascripts/bootstrap.js')  
     script(src='/javascripts/jquery.bootstrap-growl.min.js')
     script(src='/javascripts/easytimer.min.js')
-    
+    script(src='/javascripts/palabras.js')       
+      
     

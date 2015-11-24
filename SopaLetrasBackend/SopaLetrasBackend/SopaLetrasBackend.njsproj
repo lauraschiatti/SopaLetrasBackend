@@ -38,7 +38,6 @@
     <Content Include="public\javascripts\jquery.bootstrap-growl.min.js" />
     <Content Include="public\javascripts\easytimer.min.js" />
     <Content Include="public\javascripts\additional-methods.min.js" />
-    <Content Include="public\javascripts\perfil.js" />
     <Content Include="public\javascripts\jquery.nicescroll.js" />
     <Content Include="public\javascripts\jquery.nicescroll.min.js" />
     <Content Include="public\javascripts\compartirSopa.js" />
