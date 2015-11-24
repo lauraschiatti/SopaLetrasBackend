@@ -8,7 +8,10 @@ and open the template in the editor.
     Author     : Laura Schiatti
 */
 
-@font-face { font-family: Inconsolata; src: url('/fonts/Inconsolata.ttf'); }
+@font-face { 
+    font-family: 'Inconsolata'; 
+    src: url(/fonts/Inconsolata-Regular.ttf); 
+}
     
 @media (max-width:459px) {
     #container1{

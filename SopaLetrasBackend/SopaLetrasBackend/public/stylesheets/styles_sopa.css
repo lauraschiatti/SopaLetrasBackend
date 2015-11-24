@@ -8,7 +8,10 @@ and open the template in the editor.
     Author     : Laura Schiatti
 */
 
-@import url(//fonts.googleapis.com/css?family=Inconsolata);
+@font-face { 
+    font-family: 'Inconsolata'; 
+    src: url(/fonts/Inconsolata-Regular.ttf); 
+}
 
 @media (max-width:459px) {
     h1, #sopaT{
